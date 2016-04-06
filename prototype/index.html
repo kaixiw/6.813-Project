@@ -6,44 +6,99 @@
 <title>babyBuddy</title>
 <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-<div id="header">
-<h1>babyBuddy</h1>
-</div>
-<div id="content" class="row">
-    <!-- Left Column -->
-    <div id="left-col" class="col">
-        <div id="welcome">Welcome back, Susan!</div>
-        <div id="info" class="section">
-            <div class="box">
-                Blahblah
+<div id="wrapper">
+    <div id="header">
+        <h1>babyBuddy</h1>
+    </div>
+    <div id="content" class="row">
+        <!-- Left Column -->
+        <div id="left-col" class="col">
+            <div id="welcome" class="section">Welcome back, Susan!</div>
+            <div id="info" class="section">
+                <div class="box">
+                    Blahblah
+                </div>
+            </div>
+            <div id="trackers" class="section">
+                <div class="box">
+                    <h2>Log your</h2>
+                    <div id="tracker-wrapper" class="noselect">
+                        <div class="tracker-box col">
+                            <div id="thoughts" class="tracker-content">
+                                <img src="img/smiley.png"> <!--From http://www.clipartpanda.com/categories/smiley-face-clip-art-black-and-white -->
+                                Thoughts
+                            </div>
+                        </div>
+                        <div class="tracker-box col">
+                            <div id="weight" class="tracker-content">
+                                <img src="img/smiley.png">
+                                Weight
+                            </div>
+                        </div>
+                        <div class="tracker-box col">
+                            <div id="calories" class="tracker-content">
+                                <img src="img/smiley.png">
+                                Calories
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="trackers" class="section">
-            <div class="box">
-                <h2>Log your</h2>
-                blah
+        <!-- Right Column -->
+        <div id="right-col" class="col">
+            <div id="reminders" class="section">
+                <div class="box">
+                    <h2>Reminders</h2>
+                </div>
+            </div>
+            <div id="send-report" class="section">
+                <div class="box">
+                    <h2>Send To</h2>
+                </div>    
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Hidden Divs -->
+<div id="darken"></div>
+<div id="thought-popup" class="popup-wrapper">
+    <div class="popup">
+        <div class="popup-x">×</div>
+        <div class="popup-header">Thoughts</div>
+        <div class="popup-container">
+            <div class="popup-content">Journal stuff here
             </div>
         </div>
     </div>
-    <!-- Right Column -->
-    <div id="right-col" class="col">
-        <div id="reminders" class="section">
-            <div class="box">
-                <h2>Reminders</h2>
+</div>
+<div id="weight-popup" class="popup-wrapper">
+    <div class="popup">
+        <div class="popup-x">×</div>
+        <div class="popup-header">Weight</div>
+        <div class="popup-container">
+            <div class="popup-content">Weight stuff here
             </div>
         </div>
-        <div id="send-report" class="section">
-            <div class="box">
-                <h2>Send To</h2>
-            </div>    
+    </div>
+</div>
+<div id="calories-popup" class="popup-wrapper">
+    <div class="popup">
+        <div class="popup-x">×</div>
+        <div class="popup-header">Calories</div>
+        <div class="popup-container">
+            <div class="popup-content">Calorie stuff here
+            </div>
         </div>
-        
     </div>
 </div>
 
 <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="tracker.js"></script>
+<script type="text/javascript" src="sendreport.js"></script>
 </body>
 
 </html>
