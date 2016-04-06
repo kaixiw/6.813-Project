@@ -1,0 +1,33 @@
+#content {
+  width: 100%;
+  background: #ddd;
+  overflow: auto;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.section {
+  padding: 3px;
+}
+
+.box {
+  border-radius: 3px;
+  border: 1px #aaa solid;
+  background: #eee;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.col {
+  display: inline-block;
+  float: left;
+}
+
+#left-col {
+  width: 70%;
+}
+
+#right-col {
+  width: 30%;
+}
