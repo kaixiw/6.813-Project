@@ -1,0 +1,40 @@
+textarea {
+	width: 100%;
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:600;
+	font-size:18px;
+	border-bottom-style:none;
+	border-right-style:none;
+}
+
+.popup h2{
+	font-size:24px;
+	color:#8c315d;
+	font-weight:700;
+}
+
+h3 {
+	color:#8c315d;
+	font-weight:600;
+}
+#thoughts-popup .popup{
+
+}
+
+#thoughts-popup img {
+	width:100%;
+}
+
+#submitJournal {
+	float:right;
+	border-radius:20px;
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:600;
+	font-size:18px;
+	padding:5px;
+	width:80px;
+	margin:10px;
+	margin-right:0px;
+	color:white;
+
+}

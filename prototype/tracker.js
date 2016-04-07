@@ -12,3 +12,12 @@ $("#darken, .popup-wrapper").click(function(e){
     $('.active').toggleClass('active');
   }
 })
+
+
+$("#submitJournal").click(function(){
+	console.log("click");
+	if ($("#journalTextarea").val() != ""){
+		$("#journalTimeline").attr("src", "img/diarytimeline2.png");
+		$("#journalTextarea").val("");
+	}
+})

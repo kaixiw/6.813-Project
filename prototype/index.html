@@ -5,41 +5,69 @@
 <meta charset="UTF-8">
 <title>babyBuddy</title>
 <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="journal.css" />
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300|Merriweather:400,700,300|Oxygen:400,700,300|Josefin+Sans:400,600,700,300|Source+Serif+Pro:400,600|Hammersmith+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div id="wrapper">
     <div id="header">
-        <h1>babyBuddy</h1>
+        <h1>baby buddy</h1>
     </div>
     <div id="content" class="row">
         <!-- Left Column -->
+        <div id="welcome" class="section"><i>Welcome back, Susan!</i></div>
         <div id="left-col" class="col">
-            <div id="welcome" class="section">Welcome back, Susan!</div>
+            
             <div id="info" class="section">
-                <div class="box">
-                    Blahblah
+                <div class="box lightGreen">
+                    <div class ="left">
+                        <h2>23 weeks</h2>
+                        <img class ="fruit" src="img/grapefruit.png"> 
+                       
+                    </div>
+                    <div class="mid">
+                        <h3>Your baby also:</h3>
+                            <ul>
+                                <li>is forming nipples</li>
+                                <li>has a fully formed face</li>
+                                <li>can listen to your voice and heartbeat</li>
+                            </ul>
+
+                    </div>
+                    <div class="right">
+                        <h3>Common symptoms:</h2>
+                            <ul>
+                                <li>Swollen ankles and feet</li>
+                                <li>Braxton Hicks contractions</li>
+                                <li>Aching back</li>
+                                <li>Bleeding and/or swollen gums</li>
+                            </ul>
+                    </div>
+                    
+
+
                 </div>
             </div>
             <div id="trackers" class="section">
-                <div class="box">
-                    <h2>Log your</h2>
+                <div class="box green">
+                    <h2>Log your:</h2>
                     <div id="tracker-wrapper" class="noselect">
                         <div class="tracker-box col">
                             <div id="thoughts" class="tracker-content">
-                                <img src="img/smiley.png"> <!--From http://www.clipartpanda.com/categories/smiley-face-clip-art-black-and-white -->
-                                Thoughts
+                                <img src="img/smiley2.png"> <!--From http://www.clipartpanda.com/categories/smiley-face-clip-art-black-and-white -->
+                                thoughts
                             </div>
                         </div>
                         <div class="tracker-box col">
                             <div id="weight" class="tracker-content">
-                                <img src="img/smiley.png">
-                                Weight
+                                <img src="img/scale.png">
+                                weight
                             </div>
                         </div>
                         <div class="tracker-box col">
                             <div id="calories" class="tracker-content">
-                                <img src="img/smiley.png">
-                                Calories
+                                <img src="img/apple.png">
+                                calories
                             </div>
                         </div>
                     </div>
@@ -49,12 +77,34 @@
         <!-- Right Column -->
         <div id="right-col" class="col">
             <div id="reminders" class="section">
-                <div class="box">
+                <div class="box purple">
                     <h2>Reminders</h2>
+                        <ul>
+                            <li>Sample item</li>
+                            <br>
+                            <li>Sample item</li>
+                            <br>
+                            <li>Sample item</li>
+                            <br>
+                            <li>Sample item</li>
+                            <br>
+                            <li>Sample item</li>
+                            <br>
+                            <li>Sample item</li>
+                            <br>
+                            <li>Sample item</li>
+                            <br>
+                            <li>Sample item</li>
+                            <br>
+                            <br>
+                            <br>
+
+                            <br>                            
+                        </ul>
                 </div>
             </div>
             <div id="send-report" class="section">
-                <div class="box">
+                <div class="box red">
                     <h2>Send To</h2>
                 </div>    
             </div>
@@ -66,27 +116,30 @@
 <!-- Hidden Divs -->
 <div id="darken"></div>
 <div id="thoughts-popup" class="popup-wrapper">
-    <div class="popup">
+    <div class="popup lightGreen">
         <div class="popup-x">×</div>
-        <div class="popup-header">Thoughts</div>
+        <div class="popup-header"><h2>Your thoughts</h2></div>
         <div class="popup-content">
-            Journal stuff here
+            <textarea id="journalTextarea" cols="16" rows="5" class="lightGreen"></textarea>
+            <input class="red" id="submitJournal" type="submit" value="submit"/><br> <br><br>
+            <h3>Previous entries </h3><br>
+            <img id="journalTimeline" src="img/diarytimeline1.png">
         </div>
     </div>
 </div>
 <div id="weight-popup" class="popup-wrapper">
-    <div class="popup">
+    <div class="popup lightGreen">
         <div class="popup-x">×</div>
-        <div class="popup-header">Weight</div>
+        <div class="popup-header"><h2>Your weight</h2></div>
         <div class="popup-content">
             Weight stuff here
         </div>
     </div>
 </div>
 <div id="calories-popup" class="popup-wrapper">
-    <div class="popup">
+    <div class="popup lightGreen">
         <div class="popup-x">×</div>
-        <div class="popup-header">Calories</div>
+        <div class="popup-header"><h2>Calorie Log</h2></div>
         <div class="popup-content">
             Calorie stuff here
         </div>
