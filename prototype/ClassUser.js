@@ -32,20 +32,47 @@ function User(){
         this.name = data[FIELD_NAME];
         this.pregnancyWeek = data[FIELD_PREGNANCY_WEEK];
         this.reminders = data[FIELD_REMINDERS];
-        this.weightHistory = data[WEIGHT_HISTORY];
-        this.caloriesTarget = data[CALORIES_TODAY];
-        this.thoughts = data[THOUGHTS];
+        this.weightHistory = data[FIELD_WEIGHT_HISTORY];
+        this.caloriesTarget = data[FIELD_CALORIES_TODAY];
+        this.thoughts = data[FIELD_THOUGHTS];
         
     }
     
-    this.save = function(fieldLabel){
+    this.save = function(fieldLabel, info, opts){
         switch(fieldLabel){
-            case REMINDERS:
+            case FIELD_REMINDERS:
+                if (opts === true && typeof info === "string"){
+                    this.reminders["incomplete"].push(info);
+                }else if (opts === false && typeof info === "number"){
+                    //this.reminders["complete"].push(this.reminders["incomplete"].splice(info, 1)[0]);
+                    //TODO: determine whether to cross out and keep completed tasks on the list for a while
+                    //      or to immediately remove. Current implementation is to immediately remove.
+                    this.reminders["incomplete"].splice(info, 1);
+                    
+                } 
+                this.refresh(FIELD_REMINDERS);
                 break;
-            case WEIGHT_HISTORY:
+            case FIELD_WEIGHT_HISTORY:
+                break;
+            case FIELD_THOUGHTS:
                 break;
             default:
                 //maybe load everything
+        }
+    }
+    
+    this.refresh = function(fieldLabel){// for refreshing upon new data entry
+        switch(fieldLabel){
+            case FIELD_REMINDERS:
+                for (var i = 0; i < this.reminders["incomplete"].length; i++){
+                    
+                }
+                break;
+            case FIELD_WEIGHT_HISTORY:
+                break;
+            case FIELD_THOUGHTS:
+                break;
+            default:
         }
     }
     
