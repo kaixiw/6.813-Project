@@ -64,8 +64,13 @@ function User(){
     this.refresh = function(fieldLabel){// for refreshing upon new data entry
         switch(fieldLabel){
             case FIELD_REMINDERS:
+                $('#remindersList li').not('li:last').remove();
+                var ul = document.getElementById("remindersList");
+                var liList = ul.getElementsByTagName("li");
                 for (var i = 0; i < this.reminders["incomplete"].length; i++){
-                    
+                    var li = document.createElement("li");
+                    li.innerHTML = this.reminders["incomplete"][i];
+                    ul.insertBefore(li, liList[liList.length - 1]);
                 }
                 break;
             case FIELD_WEIGHT_HISTORY:
@@ -73,6 +78,7 @@ function User(){
             case FIELD_THOUGHTS:
                 break;
             default:
+                this.refresh(FIELD_REMINDERS);
         }
     }
     

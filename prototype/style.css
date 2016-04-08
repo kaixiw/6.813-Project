@@ -258,6 +258,10 @@ h2{
   color:white;
 }
 
+#remindersList {
+    list-style-type:none;
+}
+
 #send-report .box{
 
   color:white;
