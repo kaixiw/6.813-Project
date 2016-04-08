@@ -42,14 +42,23 @@ function User(){
         switch(fieldLabel){
             case FIELD_REMINDERS:
                 if (opts === true && typeof info === "string"){
-                    this.reminders["incomplete"].push(info);
+                    if (info == "remindersInput"){
+                        var reminder = document.getElementById(info).value;
+                        if (reminder == "") return;
+                        this.reminders["incomplete"].push(reminder);        
+                    }else{
+                        var index = info.substring(info.indexOf("_") + 1, info.length);
+                        var reminder = document.getElementById("edit_" + index).value;
+                        if (reminder == "") return;
+                        this.reminders["incomplete"][index] = reminder;
+                    }
                 }else if (opts === false && typeof info === "number"){
                     //this.reminders["complete"].push(this.reminders["incomplete"].splice(info, 1)[0]);
                     //TODO: determine whether to cross out and keep completed tasks on the list for a while
                     //      or to immediately remove. Current implementation is to immediately remove.
                     this.reminders["incomplete"].splice(info, 1);
                     
-                } 
+                }
                 this.refresh(FIELD_REMINDERS);
                 break;
             case FIELD_WEIGHT_HISTORY:
@@ -70,8 +79,29 @@ function User(){
                 for (var i = 0; i < this.reminders["incomplete"].length; i++){
                     var li = document.createElement("li");
                     li.innerHTML = this.reminders["incomplete"][i];
+                    li.id = "reminder_" + i;
                     ul.insertBefore(li, liList[liList.length - 1]);
                 }
+                $('#remindersList li').not('li:last').dblclick(function(event){
+                    var editID = event.target.id;
+                    var editIndex = editID.substring(editID.indexOf("_") + 1, editID.length);
+                    var reminder = event.target.innerHTML;
+                    event.target.innerHTML = "";
+                    var editInput = $("<input>").appendTo("#" + event.target.id);
+                    editInput.attr('id', "edit_"+ editIndex);
+                    //$("#" + event.target.id).append(editInput);
+                    editInput.val(reminder);
+                    editInput.focus();
+                    editInput.keypress(function(event){
+                        if (event.keyCode == 13){
+                            CURRENT_USER.save(FIELD_REMINDERS, editID, true);
+                        }
+                    });
+                    editInput.on('blur', function(){
+                        editInput.parent().html(CURRENT_USER.reminders["incomplete"][editIndex]);
+                    });
+                });
+                
                 break;
             case FIELD_WEIGHT_HISTORY:
                 break;
