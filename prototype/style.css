@@ -274,6 +274,28 @@ h2{
 
 #remindersList {
     list-style-type:none;
+    padding: 0;
+}
+
+#remindersList li{
+    margin-bottom: 3px;
+}
+
+#remindersList li p{
+    display: inline-block;
+    width: 80%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.remindersCheck{
+    display: inline-block;
+    float: right;
+}
+
+.remindersInputBox{
+    width: 80%;
 }
 
 #send-report .box{

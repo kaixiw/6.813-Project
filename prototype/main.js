@@ -13,6 +13,7 @@ $(document).ready(function(){
         $(this).val("");
         $(this).attr('placeholder', "Enter reminder here");
     });
+    $("#remindersInput").addClass("remindersInputBox");
     console.log("document loading complete");
 
 });

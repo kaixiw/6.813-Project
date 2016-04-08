@@ -86,18 +86,20 @@ function User(){
                             CURRENT_USER.save(FIELD_REMINDERS, event.target.parentNode.id, false);
                         }
                     }
-                    li.innerHTML = this.reminders["incomplete"][i];
+                    checkBox.className = "remindersCheck";
+                    li.innerHTML = '<p>' + this.reminders["incomplete"][i] + '</p>';
                     li.id = "reminder_" + i;
                     li.appendChild(checkBox);
                     ul.insertBefore(li, liList[liList.length - 1]);
                 }
                 $('#remindersList li').not('li:last').dblclick(function(event){
-                    var editID = event.target.id;
+                    var editID = this.id;
                     var editIndex = editID.substring(editID.indexOf("_") + 1, editID.length);
                     var reminder = CURRENT_USER.reminders["incomplete"][editIndex];
-                    event.target.innerHTML = "";
-                    var editInput = $("<input>").appendTo("#" + event.target.id);
+                    this.innerHTML = "";
+                    var editInput = $("<input>").appendTo("#" + this.id);
                     editInput.attr('id', "edit_"+ editIndex);
+                    editInput.addClass('remindersInputBox');
                     //$("#" + event.target.id).append(editInput);
                     editInput.val(reminder);
                     editInput.focus();
@@ -107,9 +109,10 @@ function User(){
                         }
                     });
                     editInput.on('blur', function(){
-                        editInput.parent().html(CURRENT_USER.reminders["incomplete"][editIndex]);
+                        editInput.parent().html('<p>' + CURRENT_USER.reminders["incomplete"][editIndex] + '</p>');
                         var checkBox = document.createElement("input");
                         checkBox.type = "checkbox";
+                        checkBox.className = "remindersCheck";
                         checkBox.onchange = function(event){
                             if (event.target.checked == true){
                                 CURRENT_USER.save(FIELD_REMINDERS, event.target.parentNode.id, false); 
