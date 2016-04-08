@@ -39,7 +39,14 @@ function User(){
     }
     
     this.save = function(fieldLabel){
-
+        switch(fieldLabel){
+            case REMINDERS:
+                break;
+            case WEIGHT_HISTORY:
+                break;
+            default:
+                //maybe load everything
+        }
     }
     
     this.getData = function(){ //gets data, set to be false until backend implemented. Supposed to return data in some sort of structure
@@ -50,9 +57,18 @@ function User(){
 var DEFAULT_DATA = {
     "NAME": "Susan",
     "PREGNANCY_WEEK": 23,
-    "REMINDERS": {},
-    "WEIGHT_HISTORY": {};
-    "CALORIES_TARGET": 2500;
-    "CALORIES_TODAY": 1250;
-    "THOUGHTS": {};
+    "REMINDERS": {
+        "complete": ["avoid alcohol"],
+        "incomplete": ["log weight", "log calories"]
+    },
+    "WEIGHT_HISTORY": {
+        "201604022100": 120,
+        "201604050800": 125,
+        "201604070800": 127,    
+    },
+    "CALORIES_TARGET": 2500,
+    "CALORIES_TODAY": 1250,
+    "THOUGHTS": {
+        "201604072100": "Pregnancy is hard"
+    }
 }
