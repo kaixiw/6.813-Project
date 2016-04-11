@@ -1,0 +1,26 @@
+#weightChart {
+	width: 100%;
+}
+
+#weightTextarea {
+	float:left;
+	width:50%;
+}
+
+#submitWeight {
+	float:left;
+	border-radius:20px;
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:600;
+	font-size:18px;
+	padding:5px;
+	width:80px;
+	margin:10px;
+	margin-bottom:20px;
+	color:white;
+
+}
+
+.checkBox{
+	float: left;
+}

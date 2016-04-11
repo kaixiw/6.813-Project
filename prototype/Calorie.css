@@ -1,0 +1,22 @@
+#CalorieChart {
+	width: 100%;
+}
+
+#CalorieTextarea {
+	float:left;
+	width:50%;
+}
+
+#submitCalorie {
+	float:left;
+	border-radius:20px;
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:600;
+	font-size:18px;
+	padding:5px;
+	width:80px;
+	margin:10px;
+	margin-bottom:20px;
+	color:white;
+
+}

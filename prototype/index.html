@@ -6,8 +6,11 @@
 <title>babyBuddy</title>
 <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="journal.css" />
+<link rel="stylesheet" href="weight.css" />
+<link rel="stylesheet" href="Calorie.css" />
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300|Merriweather:400,700,300|Oxygen:400,700,300|Josefin+Sans:400,600,700,300|Source+Serif+Pro:400,600|Hammersmith+One' rel='stylesheet' type='text/css'>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 <script src = "main.js"></script>
 <script src = "ClassUser.js"></script>
 </head>
@@ -104,7 +107,7 @@
         <div class="popup-x">×</div>
         <div class="popup-header"><h2>Your thoughts</h2></div>
         <div class="popup-content">
-            <textarea id="journalTextarea" cols="16" rows="5" class="lightGreen"></textarea>
+            <textarea id="journalTextarea" cols="16" rows="5" class="lightGreen" placeholder="What is on your mind today?"></textarea>
             <input class="red" id="submitJournal" type="submit" value="submit"/><br> <br><br>
             <h3>Previous entries </h3><br>
             <img id="journalTimeline" src="img/diarytimeline1.png">
@@ -116,16 +119,24 @@
         <div class="popup-x">×</div>
         <div class="popup-header"><h2>Your weight</h2></div>
         <div class="popup-content">
-            Weight stuff here
+            <textarea id="weightTextarea" row='1' class="lightGreen" placeholder="How much do you weigh today?"></textarea>
+            <input class="red" id="submitWeight" type="submit" value="submit"/>
+            <canvas id="weightChart"></canvas>
+            <h3>Compare to... </h3>
+            <input type="checkbox" value="similar" class="checkBox" id="similarCheckBox"><h3 style='color: #AD661F;'>Similar users</h3>
+            <input type="checkbox" value="previous" class="checkBox" id="previousCheckBox"><h3 style='color: #6F33E8;'>My previous pregnancy</h3>
         </div>
     </div>
 </div>
 <div id="calories-popup" class="popup-wrapper">
     <div class="popup lightGreen">
         <div class="popup-x">×</div>
-        <div class="popup-header"><h2>Calorie Log</h2></div>
+        <div class="popup-header"><h2>Your Calories</h2></div>
         <div class="popup-content">
-            Calorie stuff here
+            <textarea id="CalorieTextarea" row='1' class="lightGreen" placeholder="How much Calorie did you intake today?"></textarea>
+            <input class="red" id="submitCalorie" type="submit" value="submit"/>
+            <canvas id="CalorieChart"></canvas>
+            <h3>Current Calorie Target: 2200</h3>
         </div>
     </div>
 </div>
