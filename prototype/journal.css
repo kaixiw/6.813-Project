@@ -1,10 +1,24 @@
 textarea {
-	width: 100%;
-	font-family:'Josefin Sans', sans-serif;
-	font-weight:600;
+	width: 95%;
+/*	font-family:'Josefin Sans', sans-serif;*/
+	font-family:'Lora', serif;
+	font-weight:400;
 	font-size:18px;
 	border-bottom-style:none;
 	border-right-style:none;
+	resize:none;
+	padding:2.5%;
+	background-color: rgba(255,255,255,.25) !important;
+}
+
+.date {
+	float:right;
+	font-family:'Lora', serif;
+	font-weight:400;
+	font-size:18px;
+	text-align:right;
+	margin:10px;
+
 }
 
 .popup h2{
@@ -17,7 +31,9 @@ h3 {
 	color:#8c315d;
 	font-weight:600;
 }
-#thoughts-popup .popup{
+#thoughts-popup .popup-content{
+	position:relative;
+	top:-30px;
 
 }
 
