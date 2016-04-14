@@ -38,6 +38,8 @@ var CalorieOptions = {
 var CalorieLineChart;
 
 $('.tracker-content').click(function(){
+  if($(this).hasClass("send-active")) return;  // Don't activate popup if send is active
+
   $("#darken").toggleClass("active");
   $('#'+this.id+'-popup').toggleClass("active");
   if (this.id == 'weight') {

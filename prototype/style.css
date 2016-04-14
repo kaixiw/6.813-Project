@@ -281,8 +281,11 @@ h2{
   transition: .25s ;
 
 }
+#send-report.send-inactive {
+  cursor: pointer;
+}
 
-#send-report .box:hover{
+#send-report.send-inactive .box:hover{
   background-color: #dd483b;
 }
 /*
@@ -354,4 +357,142 @@ h2{
 #darken.active {
   opacity:1;
   z-index:999;
+}
+
+#send-report.send-active {
+  position: fixed;
+  width:28%;
+  bottom:0;
+  right: 0;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  padding:0;
+  margin:0;
+  z-index:1001;
+}
+
+#send-report.send-active .box {
+  border:none;
+  border-color: #ff695c !important;
+}
+
+#sendTextArea{
+  margin:10px 0;
+  font-size:24px;
+  width:100%;
+  padding:10px;
+  box-sizing: border-box;
+  text-align:left;
+  resize:none;
+  border-radius:3px;
+  border-style:none;
+  border-bottom-style:solid;
+  background-color: rgba(255,255,255,.75) !important;
+  transition: .2s all; 
+}
+#send-overlay,#send-overlay-success{
+  opacity: 0;
+  border: 5px #ff695c solid;
+  box-sizing: border-box;
+  width: 100%;
+  position:fixed;
+  top:0;
+  height:100%;
+  pointer-events: none;
+  z-index:1002;
+  text-align:center;
+  padding:0;
+  transition: .2s opacity;
+}
+
+#send-overlay div, #send-overlay-success div{
+  background:#ff695c;
+  margin-top:-1px;
+  display:inline-block;
+  padding: 5px 15px;
+  min-width: 300px;
+  color: white;
+  border-radius: 0 0 5px 5px;
+}
+#send-overlay-success{
+  border-color:#4d947c;
+  transition: 2s opacity;
+}
+#send-overlay-success div{
+  background:#4d947c;
+  color: black;
+}
+#send-overlay.send-active,#send-overlay-success.send-success {
+  opacity: 1;
+  transition: .2s opacity;
+}
+#send-overlay-success.send-success {
+  transition: .2s opacity;
+}
+
+
+#report-submit{
+  float: right;
+  border-radius:20px;
+  font-family:'Josefin Sans', sans-serif;
+  font-weight:600;
+  font-size:18px;
+  padding:5px 10px;
+  margin:10px;
+  margin-bottom:20px;
+  color:white;
+  cursor: pointer;
+}
+
+#report-cancel{
+  position: absolute;
+  top:10px;
+  right: 15px;
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+#report-cancel:hover{
+  opacity: 1;
+}
+#report-options {
+  display: none;
+}
+
+#send-report.send-active #report-options {
+  display: block;
+}
+
+.sendable.send-active {
+  border: 4px dashed #666;
+  opacity: .9;
+  cursor: pointer;
+  transition: .2s opacity;
+}
+
+.sendable.send-active:hover{
+  border: 4px dashed #444;
+}
+.sendable.send-active:hover,.sendable.send-active:hover > *{
+  opacity: 1;
+}
+
+.sendable.send-active.send-on {
+  opacity: 1;
+  border: 4px dashed #ff695c;
+}
+
+.sendable.send-active>*{
+  pointer-events: none;
+  opacity: .7;
+}
+
+.sendable.send-active.send-on>*{
+  opacity: .9;
+}
+
+.ui-autocomplete.ui-front {
+  z-index:1001;
+  font-size: 12px;
 }
