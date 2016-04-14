@@ -75,4 +75,4 @@ $('#send-report.send-inactive').click(function(e){
   }
 }); 
 
-$('#send-report').click();
+//$('#send-report').click();
