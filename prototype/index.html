@@ -143,8 +143,15 @@
         <div class="popup-x">×</div>
         <div class="popup-header"><h2>Your Calories</h2></div>
         <div class="popup-content">
-            <textarea id="CalorieTextarea" row='1' class="lightGreen" placeholder="How much Calorie did you intake today?"></textarea>
-            <input class="red" id="submitCalorie" type="submit" value="submit"/>
+            <div id="CalorieSubmitArea">
+                <div class="submitInstructions"> Enter your calories for today </div>
+                <input type="text" maxlength='5' id="CalorieTextarea" row='1' cols="4" class="lightGreen" placeholder="___ cal."></input>
+                <input class="red" id="submitCalorie" type="submit" value="submit"/>
+            </div>
+            <div id="afterCalorieSubmit">
+                <div class="submitInstructions">Today you have eaten</div>
+                <div class="Caloriedisplay">2000 calories</div>
+            </div>
             <canvas id="CalorieChart"></canvas>
             <h3>Current Calorie Target: 2200</h3>
         </div>

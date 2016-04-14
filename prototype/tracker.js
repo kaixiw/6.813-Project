@@ -1,8 +1,40 @@
-var weightData;
-var weightOptions;
+var weightData = {
+  labels: ["April 5", "April 6", "April 7", "April 8", "April 9", "April 10", "April 11"],
+  datasets: [
+    {
+      label: "My Weight",
+      fillColor: "rgba(225,105,92,0.2)",
+      strokeColor: "rgba(225,105,92,1)",
+      pointColor: "rgba(225,105,92,1)",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "rgba(225,105,92,1)",
+      data: [136, 142, 140, 147, 145, 149],
+    },
+  ]
+};
+var weightOptions = {
+      pointDotRadius: 8,
+};
 var weightLineChart;
-var CalorieData;
-var CalorieOptions;
+var CalorieData = {
+  labels: ["April 5", "April 6", "April 7", "April 8", "April 9", "April 10", "April 11"],
+  datasets: [
+    {
+      label: "My Calorie",
+      fillColor: "rgba(225,105,92,0.2)",
+      strokeColor: "rgba(225,105,92,1)",
+      pointColor: "rgba(225,105,92,1)",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "rgba(225,105,92,1)",
+      data: [1900, 2100, 2400, 1900, 2250, 2200],
+    },
+  ]
+};
+var CalorieOptions = {
+  pointDotRadius: 8,
+};
 var CalorieLineChart;
 
 $('.tracker-content').click(function(){
@@ -10,46 +42,10 @@ $('.tracker-content').click(function(){
   $('#'+this.id+'-popup').toggleClass("active");
   if (this.id == 'weight') {
     var ctx = document.getElementById("weightChart").getContext("2d");
-    weightData = {
-      labels: ["April 5", "April 6", "April 7", "April 8", "April 9", "April 10", "April 11"],
-      datasets: [
-        {
-          label: "My Weight",
-          fillColor: "rgba(225,105,92,0.2)",
-          strokeColor: "rgba(225,105,92,1)",
-          pointColor: "rgba(225,105,92,1)",
-          pointStrokeColor: "#fff",
-          pointHighlightFill: "#fff",
-          pointHighlightStroke: "rgba(225,105,92,1)",
-          data: [136, 142, 140, 147, 145, 149],
-        },
-      ]
-    };
-    weightOptions = {
-      pointDotRadius: 8,
-    };
     weightLineChart = new Chart(ctx).Line(weightData, weightOptions);
   } else if (this.id == 'calories') {
     var ctx = document.getElementById("CalorieChart").getContext("2d");
-    CalorieData = {
-      labels: ["April 5", "April 6", "April 7", "April 8", "April 9", "April 10", "April 11"],
-      datasets: [
-        {
-          label: "My Calorie",
-          fillColor: "rgba(225,105,92,0.2)",
-          strokeColor: "rgba(225,105,92,1)",
-          pointColor: "rgba(225,105,92,1)",
-          pointStrokeColor: "#fff",
-          pointHighlightFill: "#fff",
-          pointHighlightStroke: "rgba(225,105,92,1)",
-          data: [1900, 2100, 2400, 1900, 2250, 2200],
-        },
-      ]
-    };
-    CalorieOptions = {
-      pointDotRadius: 8,
-    };
-    CalorieLineChart = new Chart(ctx).Line(CalorieData, CalorieOptions);
+    CalorieLineChart = new Chart(ctx).Bar(CalorieData, CalorieOptions);
   };
 });
 
@@ -62,6 +58,8 @@ $("#darken, .popup-wrapper").click(function(e){
     $('.active').toggleClass('active');
     $('#similarCheckBox').attr('checked', false);
     $('#previousCheckBox').attr('checked', false);
+    weightData.datasets = [weightData.datasets[0]];
+    CalorieData.datasets = [CalorieData.datasets[0]];
   }
 })
 
@@ -104,17 +102,34 @@ $('#weightTextarea').keydown(function (event) {
     }
 });
 
-
-
 $("#submitCalorie").click(function(){
   if ($("#CalorieTextarea").val() != ""){
     $("#CalorieTextarea").val("");
     CalorieData.datasets[0].data.push(2000);
     CalorieLineChart.destroy();
     var ctx = document.getElementById("CalorieChart").getContext("2d");
-    CalorieLineChart = new Chart(ctx).Line(CalorieData, CalorieOptions);
+    CalorieLineChart = new Chart(ctx).Bar(CalorieData, CalorieOptions);
+    $("#CalorieSubmitArea").css("display","none");
+    $("#afterCalorieSubmit").css("display","block");
   }
 })
+
+//Also submit weight when pressing enter in weight textbox
+$('#CalorieTextarea').keydown(function (event) {
+    var keypressed = event.keyCode || event.which;
+    if (keypressed == 13) {
+        if ($("#CalorieTextarea").val() != ""){
+          $("#CalorieTextarea").val("");
+          CalorieData.datasets[0].data.push(2000);
+          CalorieLineChart.destroy();
+          var ctx = document.getElementById("CalorieChart").getContext("2d");
+          CalorieLineChart = new Chart(ctx).Bar(CalorieData, CalorieOptions);
+          $("#CalorieSubmitArea").css("display","none");
+          $("#afterCalorieSubmit").css("display","block");
+        }
+    }
+});
+
 
 $("#similarCheckBox").click(function(){
   if($(this).is(':checked')) {
