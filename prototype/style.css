@@ -9,10 +9,10 @@ html,body {
 
 }
 body {
-  font-family: 'Lora', serif;
-/*  font-family: 'Josefin Sans', sans-serif;*/
+/*  font-family: 'Lora', serif;*/
+  font-family: 'Quicksand', sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   background-color: #f9f9f9;
 }
 
@@ -69,6 +69,14 @@ h3{
   background-color: #e6f8eb; /*light green*/
 }
 
+.white{
+  border-right-style:solid;
+  border-bottom-style:solid;
+  border-width:3px;
+  border-color: #e6f8eb; /*light green*/
+  background-color: #f9f9f9; /*white*/
+}
+
 .purple{
   border-right-style:solid;
   border-bottom-style:solid;
@@ -99,7 +107,7 @@ h3{
   font-size: 24px;
   padding-left: 20px;
   color:#8c315d;
-  font-family:"Lora", serif;
+/*  font-family:"Lora", serif;*/
   font-style:italic;
 }
 

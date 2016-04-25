@@ -1,7 +1,7 @@
 textarea {
 	width: 95%;
-/*	font-family:'Josefin Sans', sans-serif;*/
-	font-family:'Lora', serif;
+	font-family:'Quicksand', sans-serif;
+/*	font-family:'Lora', serif;*/
 	font-weight:400;
 	font-size:18px;
 	border-bottom-style:none;
@@ -13,9 +13,9 @@ textarea {
 
 .date {
 	float:right;
-	font-family:'Lora', serif;
-	font-weight:400;
-	font-size:18px;
+/*	font-family:'Lora', serif;*/
+/*	font-weight:400;
+	font-size:18px;*/
 	text-align:right;
 	margin:10px;
 

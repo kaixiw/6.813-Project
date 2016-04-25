@@ -4,7 +4,6 @@
 
 #weightSubmitArea{
 	width:220px;
-
 	margin:auto;
 	text-align:center;
 }
@@ -19,7 +18,6 @@
 
 .submitInstructions{
 	margin-bottom:10px;
-	font-family:'Lora', serif;
 	font-weight:400;
 }
 .weightdisplay{
@@ -69,10 +67,11 @@
 }
 
 
-.compare{
+.compare{/*
 	font-family:'Lora', serif;
 
-	font-weight:400;
+	font-weight:400;*/
+
 }
 
 .previous{
