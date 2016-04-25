@@ -45,9 +45,14 @@ $('.tracker-content').click(function(){
   if (this.id == 'weight') {
     var ctx = document.getElementById("weightChart").getContext("2d");
     weightLineChart = new Chart(ctx).Line(weightData, weightOptions);
+    document.getElementById("weightTextarea").focus();
   } else if (this.id == 'calories') {
     var ctx = document.getElementById("CalorieChart").getContext("2d");
     CalorieLineChart = new Chart(ctx).Bar(CalorieData, CalorieOptions);
+    document.getElementById("CalorieTextarea").focus();
+  } else {
+    // We are in Journal
+    document.getElementById("journalTextarea").focus();
   };
 });
 
