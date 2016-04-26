@@ -1,4 +1,4 @@
-textarea, .entry {
+textarea, .entry, .editable {
 	width: 95%;
 	font-family:'Quicksand', sans-serif;
 /*	font-family:'Lora', serif;*/
@@ -20,8 +20,40 @@ textarea, .entry {
 
 }
 
+.editable{
+	color:black;
+
+	padding:1%;
+}
+
+
+.editTextarea{
+	display:none;
+}
+
+
+
+textarea {
+	height: 150px;
+}
+/*.popup-content{
+	overflow-x:hidden;
+	overflow-y:auto;
+}*/
+
+
+
 .entry{
 	width:auto;
+/*	border-style:none;*/
+/*	border-top-left-radius:3px;*/
+	border-top-right-radius:3px;
+	border-color:#C63F7E;
+}
+
+.entry:hover{
+	background-color:#C63F7E !important;
+	border-color:#FF87A7;
 }
 
 #prevJournalEntries{
@@ -29,8 +61,10 @@ textarea, .entry {
 	position:relative;
 	top:-5px;
 	max-height:400px;
+
 	overflow-x:hidden;
 	overflow-y:auto;
+
 }
 
 .entry{
@@ -80,7 +114,7 @@ h3 {
 }
 #thoughts-popup .popup-content{
 	position:relative;
-	top:-30px;
+/*	top:-30px;*/
 
 }
 
@@ -100,11 +134,12 @@ h3 {
 	margin-right:0px;
 	color:white;
 	position:relative;
-	bottom:60px;
+/*	bottom:60px;*/
 	border-width:0px;
-	display:none;
+	visibility:hidden;
 	transition: .2s all;
 	z-index:3;
+	bottom:4px;
 
 }
 
@@ -143,13 +178,22 @@ h3 {
 }
 
 .fullDate{
-	float:right;
+	width:100%;/*
+	float:right;*/
+	display:block;
+	text-align:right;
+	font-size:14px;
+	margin-bottom: 5px;
+}
+
+.entryActions{
+	width:100%;
 	text-align:right;
 	font-size:14px;
 }
 
 .entryText{
-	float:left;
+	/*float:left;*/
 }
 
 .vis{
@@ -166,4 +210,8 @@ h3 {
 
 .collapsed{
 /*	height:20px;*/
+}
+
+.edit, .delete{
+	padding:10px;
 }

@@ -53,6 +53,7 @@ $('.tracker-content').click(function(){
   } else {
     // We are in Journal
     document.getElementById("journalTextarea").focus();
+    
   };
 });
 
