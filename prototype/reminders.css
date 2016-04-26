@@ -17,13 +17,39 @@
     display: inline-block;
     width: 80%;
     overflow: hidden;
+    word-wrap: break-word;
     padding: 0;
     margin: 0;
+    padding-left: 5px;
 }
+
+#remindersList li:hover p{
+    font-weight: bold;
+}
+
+#remindersList li:hover .deleteCheckbox + label{
+    visibility: visible;
+}
+
 
 .remindersCheck{
     display: inline-block;
     float: right;
+}
+.deleteCheckbox{
+    display: none;
+    float: left;
+}
+
+.deleteCheckbox + label{
+    background:url('img/ic_delete_forever.png') no-repeat;
+    background-size: 120%;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    padding: 0 0 0 0;
+    float: left;
+    visibility: hidden;
 }
 
 .remindersInputBox{
@@ -54,3 +80,70 @@
     color: #C63F7E;
 
 }
+
+#todos .box{
+  color:white;
+}
+
+#todosList {
+    list-style-type:none;
+    padding: 0;
+}
+
+#todosList li:hover .deleteCheckbox + label{
+    visibility: visible;
+}
+
+#todosList li{
+/*    margin-bottom: 3px;*/
+  margin:10px 0;
+}
+
+#todosList li p{
+    display: inline-block;
+    width: 80%;
+    overflow: hidden;
+    word-wrap: break-word;
+    padding-left: 5px;
+    margin: 0;
+}
+
+#todosList li:not(.completed) p:hover {
+    font-weight: bold;
+}
+
+.todosCheck{
+    display: inline-block;
+    float: right;
+}
+
+.todosInputBox{
+    width: 95%;
+    padding:2.5%;
+    background-color: rgba(198,63,126,.25);
+    border-style:none;
+     border-radius:3px;
+     color:white;
+     font-size:16px;
+     font-family: "Quicksand", sans-serif;
+/*    font-family: "Josefin Sans", sans-serif;*/
+/*     border-bottom-left-radius:0px;
+      border-bottom-right-radius:0px;*/
+    border-bottom-style: solid;
+    border-bottom-color:#C63F7E;
+    transition: .2s all;
+
+
+}
+
+.todosInputBox:focus{
+    /*border-bottom-color:#FF5E99;*/
+    border-bottom-color:#FF87A7;
+}
+
+.todosInputBox::-webkit-input-placeholder{
+    color: #C63F7E;
+
+}
+
+
