@@ -21,6 +21,10 @@
     margin: 0;
 }
 
+#remindersList li p:hover {
+    font-weight: bold;
+}
+
 .remindersCheck{
     display: inline-block;
     float: right;
@@ -51,6 +55,66 @@
 }
 
 .remindersInputBox::-webkit-input-placeholder{
+    color: #C63F7E;
+
+}
+
+#todos .box{
+  color:white;
+}
+
+#todosList {
+    list-style-type:none;
+    padding: 0;
+}
+
+#todosList li{
+/*    margin-bottom: 3px;*/
+  margin:10px 0;
+}
+
+#todosList li p{
+    display: inline-block;
+    width: 80%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+#todosList li:not(.completed) p:hover {
+    font-weight: bold;
+}
+
+.todosCheck{
+    display: inline-block;
+    float: right;
+}
+
+.todosInputBox{
+    width: 95%;
+    padding:2.5%;
+    background-color: rgba(198,63,126,.25);
+    border-style:none;
+     border-radius:3px;
+     color:white;
+     font-size:16px;
+     font-family: "Quicksand", sans-serif;
+/*    font-family: "Josefin Sans", sans-serif;*/
+/*     border-bottom-left-radius:0px;
+      border-bottom-right-radius:0px;*/
+    border-bottom-style: solid;
+    border-bottom-color:#C63F7E;
+    transition: .2s all;
+
+
+}
+
+.todosInputBox:focus{
+    /*border-bottom-color:#FF5E99;*/
+    border-bottom-color:#FF87A7;
+}
+
+.todosInputBox::-webkit-input-placeholder{
     color: #C63F7E;
 
 }
