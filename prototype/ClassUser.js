@@ -77,11 +77,11 @@ function User(){
                         }
                         if (todoText == "") return;
                         this.todos[index]["text"] = todoText;
-                        this.todos[index]["complete"] = false;
+                        this.todos[index]["complete"] = !this.todos[index]["complete"];
                     }
                 }else if (opts === false && typeof info === "string"){//for removing
                     var index = info.substring(info.indexOf("_") + 1, info.length);
-                    this.todos[index]["complete"] = true;
+                    this.todos.splice(index, 1);
                 }
                 this.refresh(FIELD_TODOS);
                 break;
@@ -103,16 +103,20 @@ function User(){
                 for (var i = 0; i < this.reminders.length; i++){
                     var li = document.createElement("li");
                     var checkBox = document.createElement("input");
+                    var label = document.createElement("label");
+                    label.htmlFor = "reminderDelete_" + i;
                     checkBox.type = "checkbox";
+                    checkBox.id = "reminderDelete_" + i;
                     checkBox.onchange = function(event){
                         if (event.target.checked == true){
                             CURRENT_USER.save(FIELD_REMINDERS, event.target.parentNode.id, false);
                         }
                     }
-                    checkBox.className = "remindersCheck";
+                    checkBox.className = "deleteCheckbox";
                     li.innerHTML = '<p>' + this.reminders[i] + '</p>';
                     li.id = "reminder_" + i;
                     li.appendChild(checkBox);
+                    li.appendChild(label);
                     ul.insertBefore(li, liList[liList.length - 1]);
                 }
                 $('#remindersList li').not('li:last').dblclick(function(event){
@@ -135,12 +139,17 @@ function User(){
                         editInput.parent().html('<p>' + CURRENT_USER.reminders[editIndex] + '</p>');
                         var checkBox = document.createElement("input");
                         checkBox.type = "checkbox";
-                        checkBox.className = "remindersCheck";
+                        checkBox.className = "deleteCheckbox";
+                        checkBox.id = "reminderDelete_" + editIndex;
+                        var label = document.createElement("label");
+                        label.htmlFor = "reminderDelete_" + editIndex;
                         checkBox.onchange = function(event){
                             if (event.target.checked == true){
                                 CURRENT_USER.save(FIELD_REMINDERS, event.target.parentNode.id, false); 
-                            }                        }
+                            }                        
+                        }
                         document.getElementById(editID).appendChild(checkBox);
+                        document.getElementById(editID).appendChild(label);
                     });
                 });
                 break;
@@ -160,16 +169,22 @@ function User(){
                         li.innerHTML = '<p>' + this.todos[i]["text"] + '</p>';
                     }
                     checkBox.onchange = function(event){
-                        if (event.target.checked == true){
-                            CURRENT_USER.save(FIELD_TODOS, event.target.parentNode.id, false);
-                        }else if (event.target.checked == false){
-                            CURRENT_USER.save(FIELD_TODOS, event.target.parentNode.id, true);
-                        }
-
+                        CURRENT_USER.save(FIELD_TODOS, event.target.parentNode.id, true);
                     }
                     checkBox.className = "todosCheck";
                     li.id = "todo_" + i;
+                    var deleteCheckBox = document.createElement("input");
+                    var label = document.createElement("label");
+                    label.htmlFor = "todoDelete_" + i;
+                    deleteCheckBox.type = "checkbox";
+                    deleteCheckBox.id = "todoDelete_" + i;
+                    deleteCheckBox.onchange = function(event){
+                        CURRENT_USER.save(FIELD_TODOS, event.target.parentNode.id, false);
+                    }
+                    deleteCheckBox.className = "deleteCheckbox";
                     li.appendChild(checkBox);
+                    li.appendChild(deleteCheckBox);
+                    li.appendChild(label);
                     ul.insertBefore(li, liList[liList.length - 1]);
                 }
                 $('#todosList li').not('li:last').dblclick(function(event){
@@ -195,11 +210,20 @@ function User(){
                         checkBox.type = "checkbox";
                         checkBox.className = "todosCheck";
                         checkBox.onchange = function(event){
-                            if (event.target.checked == true){
-                                CURRENT_USER.save(FIELD_TODOS, event.target.parentNode.id, false); 
-                            }
+                            CURRENT_USER.save(FIELD_TODOS, event.target.parentNode.id, true); 
                         }
+                        var deleteCheckBox = document.createElement("input");
+                        var label = document.createElement("label");
+                        label.htmlFor = "todoDelete_" + editIndex;
+                        deleteCheckBox.type = "checkbox";
+                        deleteCheckBox.id = "todoDelete_" + editIndex;
+                        deleteCheckBox.onchange = function(event){
+                            CURRENT_USER.save(FIELD_TODOS, event.target.parentNode.id, false);
+                        }
+                        deleteCheckBox.className = "deleteCheckbox";
                         document.getElementById(editID).appendChild(checkBox);
+                        document.getElementById(editID).appendChild(deleteCheckBox);
+                        document.getElementById(editID).appendChild(label);
                     });
                 });
                 break;

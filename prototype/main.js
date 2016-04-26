@@ -22,7 +22,7 @@ $(document).ready(function(){
     });
     $("#todosInput").on('blur', function(){
         $(this).val("");
-        $(this).attr('placeholder', "Enter Todo here");
+        $(this).attr('placeholder', "Enter todo here");
     });
     $("#todosInput").addClass("todosInputBox");
 
