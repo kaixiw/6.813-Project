@@ -16,8 +16,11 @@
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+<script src = "external_js/moment.js"></script>
 <script src = "main.js"></script>
 <script src = "ClassUser.js"></script>
+<script src = "journal.js"></script>
+
 </head>
 <body>
 <div id="wrapper">
@@ -117,10 +120,36 @@
         <div class="popup-header"><h2>Your thoughts</h2></div>
         <div class="popup-content">
             <div class="date">April 7th, 2016<br> 2:43pm</div>
-            <textarea id="journalTextarea" cols="16" rows="4" class="lightGreen" placeholder="What is on your mind today?"></textarea>
-            <input class="red" id="submitJournal" type="submit" value="submit"/><br> <br><br>
-            <h3>Previous entries </h3><br>
-            <img id="journalTimeline" src="img/diarytimeline1.png">
+            <textarea id="journalTextarea" cols="16" rows="4"  placeholder="What is on your mind today?"></textarea>
+            <input class="red" id="submitJournal" type="submit" value="submit"/>
+            <div id="prevJournalEntries">
+                <div class="entry a"> 
+                    <div class="preview vis"><div class="previewText">Entry D today i fel...</div> <div class="previewDate">April 35</div></div>
+                    <div class="entryFull hid">
+                    <div class="fullDate">Monday, Apr 25th 16<br>10:26 pm</div>
+                    <div class="entryText">
+                    Entry D today i felt isjfoidfjfghf
+                    sdffdsiofjsdoifjidsj<br> soidfousd</div></div>
+                </div> 
+                <div class="entry c">
+                    <div class="preview vis"><div class="previewText">Entry C today i fel...</div><div class="previewDate">April 12</div></div>
+                    <div class="entryFull hid">
+                    <div class="fullDate">Saturday, Apr 23th 16<br>6:16 pm</div>
+                    <div class="entryText">
+                    Entry C today i felt isjfoidfjsidfsddssdf
+                    sdffdsiofjsdoifjidsj<br> soidfousd</div></div>
+                </div> 
+<!--                 <div class="entry b"> Entry B
+                </div> 
+                <div class="entry a"> Entry A
+                </div> 
+                <div class="entry c"> Entry F
+                </div> 
+                <div class="entry b"> Entry H
+                </div> 
+                <div class="entry a"> Entry U
+                </div>  -->
+            </div>
         </div>
     </div>
 </div>

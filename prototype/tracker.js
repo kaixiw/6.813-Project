@@ -57,7 +57,7 @@ $('.tracker-content').click(function(){
 });
 
 $("#darken, .popup-wrapper").click(function(e){
-  console.log(e.target);
+  // console.log(e.target);
   var target = $(e.target);
   if(!(target.parents('div.popup').length || target.is('.popup')) 
     ||(target.is('.popup-x'))){
@@ -71,13 +71,13 @@ $("#darken, .popup-wrapper").click(function(e){
 })
 
 
-$("#submitJournal").click(function(){
-	console.log("click");
-	if ($("#journalTextarea").val() != ""){
-		$("#journalTimeline").attr("src", "img/diarytimeline2.png");
-		$("#journalTextarea").val("");
-	}
-})
+// $("#submitJournal").click(function(){
+// 	console.log("click");
+// 	if ($("#journalTextarea").val() != ""){
+// 		$("#journalTimeline").attr("src", "img/diarytimeline2.png");
+// 		$("#journalTextarea").val("");
+// 	}
+// })
 
 $("#submitWeight").click(function(){
   if ($("#weightTextarea").val() != ""){
