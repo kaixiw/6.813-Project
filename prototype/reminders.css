@@ -34,11 +34,11 @@
 
 .remindersCheck{
     display: inline-block;
-    float: right;
+    float: left;
 }
 .deleteCheckbox{
     display: none;
-    float: left;
+    float: right;
 }
 
 .deleteCheckbox + label{
@@ -48,7 +48,7 @@
     width: 20px;
     display: inline-block;
     padding: 0 0 0 0;
-    float: left;
+    float: right;
     visibility: hidden;
 }
 
@@ -113,8 +113,9 @@
 }
 
 .todosCheck{
+    margin-top: 7px;
     display: inline-block;
-    float: right;
+    float: left;
 }
 
 .todosInputBox{

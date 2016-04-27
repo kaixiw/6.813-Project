@@ -77,7 +77,7 @@ function User(){
                         }
                         if (todoText == "") return;
                         this.todos[index]["text"] = todoText;
-                        this.todos[index]["complete"] = !this.todos[index]["complete"];
+                        this.todos[index]["complete"] = !this.todos[index]["complete"];//toggles to other boolean
                     }
                 }else if (opts === false && typeof info === "string"){//for removing
                     var index = info.substring(info.indexOf("_") + 1, info.length);
