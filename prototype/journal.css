@@ -135,7 +135,9 @@ h3 {
 	color:white;
 	position:relative;
 /*	bottom:60px;*/
-	border-width:0px;
+	border-style:none;
+	border-right-style:solid;
+	border-bottom-style:solid;
 	visibility:hidden;
 	transition: .2s all;
 	z-index:3;
@@ -145,7 +147,8 @@ h3 {
 
 #submitJournal:hover{
 	cursor:pointer;
-	background-color:#c31313;
+	background-color:#dd483b;
+	border-color:#c31313;
 }
 
 #CalorieTextarea {

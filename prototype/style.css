@@ -61,6 +61,14 @@ h3{
   border-width:3px;
 }
 
+.mediumGreen{
+  border-right-style:solid;
+  border-bottom-style:solid;
+  border-width:3px;
+  background-color: #BCDDCB; /*slightly lighter than medium green*/
+  border-color: #8DC9B5; /*Medium green*/
+}
+
 .lightGreen{
   border-right-style:solid;
   border-bottom-style:solid;
@@ -92,6 +100,8 @@ h3{
   background-color: #ff695c; /*red*/
   border-color:#c31313; /*dark red*/
 }
+
+
 
 /*
   General layout
@@ -185,7 +195,7 @@ h2{
   width:32%;
   display:inline;
   position:relative;
-  top:-22px;
+  top:-14px;
 
   float:left;
 }
@@ -194,7 +204,7 @@ h2{
   width: 36%;
   display:inline;
   position:relative;
-  top:-22px;
+  top:-14px;
   float:right;
 
 
@@ -205,6 +215,7 @@ h2{
 }
 #info h3 {
   color:#ff695c;
+
 }
 
 .fruit {
@@ -236,6 +247,38 @@ h2{
 #trackers h2{
   padding-left:20px;
   padding-top:10px;
+  color:#8c315d !important;
+}
+
+.trackerButton{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  border-radius:20px;
+  border-top-style:none;
+  border-left-style:none;
+  font-size:20px;
+  padding:5px;
+  border-width:3px;
+/*  width:90px;*/
+  padding-right:20px;
+  padding-left:24px;
+/*  background-color:#4d947c;
+  color:white;*/
+ /* background-color:#8c315d;  dark purple*/
+
+/*  color:white;*/
+  transition: .2s all;
+/*  border-color: #b9dfc4 !important; 
+  background-color: #e6f8eb; /*light green*/
+  color:white;
+/*  color:#8c315d;
+*/
+}
+
+.trackerButton:hover{
+  cursor:pointer;
+  background-color:#b9dfc4;
+  border-color: #286853;
 }
 
 #trackers .box {
@@ -264,17 +307,19 @@ h2{
   color:#8c315d;
 
 
-
 }
-.tracker-content:hover {
-  background-color:#7abca6;
+/*.tracker-content:hover {
 
-}
+  background-color:#8DC9B5;
+
+}*/
 .tracker-box img {
   width:40%;
   height: 40%;
   display: block;
   margin: 10px auto;
+  position:relative;
+  transition: .2s all;
 }
 
 #tracker-wrapper {
@@ -386,6 +431,10 @@ h2{
   border-color: #ff695c !important;
 }
 
+#send-report.send-inactive .box{
+  border-radius:40px;
+}
+
 #sendTextArea{
   margin:10px 0;
   font-size:24px;
@@ -467,6 +516,9 @@ h2{
 }
 #report-options {
   display: none;
+}
+#send-report.send-inactive .box{
+  text-align:center !important;
 }
 
 #send-report.send-active #report-options {

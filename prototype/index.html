@@ -63,25 +63,25 @@
                 </div>
             </div>
             <div id="trackers" class="section">
-                <div class="box green">
+                <div class="box mediumGreen">
                     <h2>Log your:</h2>
                     <div id="tracker-wrapper" class="noselect">
                         <div class="tracker-box col">
                             <div id="thoughts" class="tracker-content sendable">
                                 <img src="img/smiley2.png"> <!--From http://www.clipartpanda.com/categories/smiley-face-clip-art-black-and-white -->
-                                thoughts
+                                <button class="trackerButton green">thoughts</button>
                             </div>
                         </div>
                         <div class="tracker-box col">
                             <div id="weight" class="tracker-content sendable">
                                 <img src="img/scale.png">
-                                weight
+                                <button class="trackerButton green">weight</button>
                             </div>
                         </div>
                         <div class="tracker-box col">
                             <div id="calories" class="tracker-content sendable">
                                 <img src="img/apple.png">
-                                calories
+                                <button class="trackerButton green">calories</button>
                             </div>
                         </div>
                     </div>
@@ -90,6 +90,15 @@
         </div>
         <!-- Right Column -->
         <div id="right-col" class="col">
+            <div id="send-report" class="section send-inactive">
+                <div class="box red">
+                    <h2>Email Your Progress</h2>
+                    <div id="report-options">
+                    <div id="report-cancel">cancel</div>
+                    <input type="text" id="sendTextArea" row='1' class="red" placeholder="Email"></input>
+                    <button id="report-submit" class="red">Submit</button></div>
+                </div>    
+            </div>
             <div id="todos" class="section sendable">
                 <div class="box purple">
                     <h2>Todos</h2>
@@ -106,15 +115,7 @@
                     </ul>
                 </div>
             </div>
-            <div id="send-report" class="section send-inactive">
-                <div class="box red">
-                    <h2>Send To</h2>
-                    <div id="report-options">
-                    <div id="report-cancel">cancel</div>
-                    <input type="text" id="sendTextArea" row='1' class="red" placeholder="Email"></input>
-                    <button id="report-submit" class="red">Submit</button></div>
-                </div>    
-            </div>
+
             
         </div>
     </div>
@@ -197,7 +198,7 @@
     </div>
 </div>
 <div id="calories-popup" class="popup-wrapper">
-    <div class="popup lightGreen">
+    <div class="popup white">
         <div class="popup-x">×</div>
         <div class="popup-header"><h2>Your Calories</h2></div>
         <div class="popup-content">

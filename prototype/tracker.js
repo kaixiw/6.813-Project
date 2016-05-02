@@ -56,8 +56,20 @@ $('.tracker-content').click(function(){
     
   };
 });
+//Change the button colors on hovering over the tracker boxes
+$('.tracker-content').hover(function(){
+    $(this).find('.trackerButton').css('background-color',"#4d947c");
+    $(this).find('.trackerButton').css('border-color',"#286853");
+    $(this).find('img').css('bottom',"10px");
+
+  }, function(){
+    $(this).find('.trackerButton').css('background-color',"#8DC9B5");
+    $(this).find('.trackerButton').css('border-color',"#4d947c");
+    $(this).find('img').css('bottom',"0px");
+});
 
 $("#darken, .popup-wrapper").click(function(e){
+
   // console.log(e.target);
   var target = $(e.target);
   if(!(target.parents('div.popup').length || target.is('.popup')) 
@@ -69,16 +81,10 @@ $("#darken, .popup-wrapper").click(function(e){
     weightData.datasets = [weightData.datasets[0]];
     CalorieData.datasets = [CalorieData.datasets[0]];
   }
+  
 })
 
 
-// $("#submitJournal").click(function(){
-// 	console.log("click");
-// 	if ($("#journalTextarea").val() != ""){
-// 		$("#journalTimeline").attr("src", "img/diarytimeline2.png");
-// 		$("#journalTextarea").val("");
-// 	}
-// })
 
 $("#submitWeight").click(function(){
   if ($("#weightTextarea").val() != ""){

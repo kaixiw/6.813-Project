@@ -57,5 +57,15 @@
 	margin:10px;
 	margin-bottom:20px;
 	color:white;
+	border-style:none;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	transition: .2s all;
 
+}
+
+#submitCalorie:hover{
+	cursor:pointer;
+	background-color:#dd483b;
+	border-color:#c31313;
 }

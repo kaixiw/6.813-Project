@@ -1,8 +1,22 @@
 
 #reminders .box{
   color:white;
+/*  min-height:260px;*/
 }
 
+/*#reminders .box, #todos .box{
+    position:relative;
+    height:260px;
+    
+}
+
+#reminders ul, #todos ul{
+    position:absolute;
+    bottom:0px;
+    height:auto;
+    max-height:260px;
+}
+*/
 #remindersList {
     list-style-type:none;
     padding: 0;
@@ -32,14 +46,16 @@
 }
 
 
-.remindersCheck{
+.remindersCheck {
     display: inline-block;
     float: left;
 }
-.deleteCheckbox{
+
+.deleteCheckbox {
     display: none;
     float: right;
 }
+
 
 .deleteCheckbox + label{
     background:url('img/ic_delete_forever.png') no-repeat;
@@ -50,6 +66,7 @@
     padding: 0 0 0 0;
     float: right;
     visibility: hidden;
+
 }
 
 .remindersInputBox{
@@ -83,9 +100,15 @@
 
 #todos .box{
   color:white;
+/*  min-height:260px;*/
+}
+
+#todosInput{
+
 }
 
 #todosList {
+
     list-style-type:none;
     padding: 0;
 }

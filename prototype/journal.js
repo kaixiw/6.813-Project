@@ -2,7 +2,10 @@ $(document).ready(function(){
 
 	//Change to appropriate date and time
 	
-	$(".date").html(moment().format('dddd')+', '+ moment().format('MMMM Do') + "<br>" + moment().format("h:mm a")); 
+	function updateTime(){ $(".date").html(moment().format('dddd')+', '+ moment().format('MMMM Do') + "<br>" + moment().format("h:mm a")); 
+	}
+	updateTime();
+	setTimeout(updateTime, 30000);
 
 	// $("#journalTextarea").change
 	$('#journalTextarea').on('input propertychange paste', function() {
