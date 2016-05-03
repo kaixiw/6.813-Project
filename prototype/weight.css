@@ -1,11 +1,18 @@
-#weightChart {
-	width: 100%;
-}
-
 #weightSubmitArea{
 	width:220px;
 	margin:auto;
 	text-align:center;
+}
+
+#invalidWeightSubmit{
+	padding-top:10px;
+	padding-bottom:10px;
+	display:none;
+	text-align:center;
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:400;
+	font-size:24px;
+	color:#ff695c;
 }
 
 #afterWeightSubmit{
@@ -21,6 +28,9 @@
 	font-weight:400;
 }
 .weightdisplay{
+	padding-top: 10px;
+	float:left;
+	width:120px;
 	font-family:'Josefin Sans', sans-serif;
 	font-weight:600;
 	font-size:36px;
@@ -48,7 +58,7 @@
 	border-color:#8DC9B5;
 }
 
-#submitWeight {
+#editWeight, #submitWeight {
 	float:right;
 	border-radius:20px;
 	font-family:'Josefin Sans', sans-serif;
@@ -67,7 +77,7 @@
 
 }
 
-#submitWeight:hover{
+#editWeight:hover, #submitWeight:hover{
 	cursor:pointer;
 	background-color:#dd483b;
 	border-color:#c31313;

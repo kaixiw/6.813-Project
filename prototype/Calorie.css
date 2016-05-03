@@ -1,17 +1,23 @@
-#CalorieChart {
-	width: 100%;
-}
-
 #CalorieSubmitArea{
 	width:220px;
-
 	margin:auto;
 	text-align:center;
 }
 
+#invalidCalorieSubmit{
+	padding-top:10px;
+	padding-bottom:10px;
+	display:none;
+	text-align:center;
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:400;
+	font-size:24px;
+	color:#ff695c;
+}
+
 #afterCalorieSubmit{
 	display:none;
-	width:220px;
+	width:260px;
 
 	margin:auto;
 	text-align:center;
@@ -34,6 +40,9 @@
 }
 
 .Caloriedisplay{
+	padding-top: 10px;
+	float:left;
+	width:160px;
 	font-family:'Josefin Sans', sans-serif;
 	font-weight:600;
 	font-size:36px;
@@ -46,7 +55,7 @@
 }
 
 
-#submitCalorie {
+#editCalorie, #submitCalorie {
 	float:right;
 	border-radius:20px;
 	font-family:'Josefin Sans', sans-serif;
@@ -64,7 +73,7 @@
 
 }
 
-#submitCalorie:hover{
+#editCalorie:hover, #submitCalorie:hover{
 	cursor:pointer;
 	background-color:#dd483b;
 	border-color:#c31313;
