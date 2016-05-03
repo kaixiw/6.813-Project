@@ -61,11 +61,11 @@ textarea {
 	position:relative;
 	top:-5px;
 	max-height:400px;
-
 	overflow-x:hidden;
 	overflow-y:auto;
 
 }
+
 
 .entry{
 	color:white;

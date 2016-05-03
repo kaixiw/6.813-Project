@@ -59,18 +59,17 @@ var CalorieOptions = {
 };
 var CalorieLineChart;
 
-$('.tracker-content').click(function(){
-  if($(this).hasClass("send-active")) return;  // Don't activate popup if send is active
-
+var activatePopup = function(self){
+  $('html, body').animate({ scrollTop: 0 }, 'fast');
   $("#darken").toggleClass("active");
-  $('#'+this.id+'-popup').toggleClass("active");
-  if (this.id == 'weight') {
+  $('#'+self.id+'-popup').toggleClass("active");
+  if (self.id == 'weight') {
     var ctx = document.getElementById("weightChart").getContext("2d");
     $("#weightChart").attr('width', $("#weightPopup").width());
     $("#weightChart").attr('height', $("#weightPopup").width()/1.618);
     weightLineChart = new Chart(ctx).Line(weightData, weightOptions);
     document.getElementById("weightTextarea").focus();
-  } else if (this.id == 'calories') {
+  } else if (self.id == 'calories') {
     var ctx = document.getElementById("CalorieChart").getContext("2d");
     $("#CalorieChart").attr('width', $("#CaloriePopup").width());
     $("#CalorieChart").attr('height', $("#CaloriePopup").width()/1.618);
@@ -109,7 +108,13 @@ $('.tracker-content').click(function(){
     document.getElementById("journalTextarea").focus();
     
   };
+}
+
+$('.tracker-content').click(function(){
+  if($(this).hasClass("send-active")) return;  // Don't activate popup if send is active
+  activatePopup(this);
 });
+
 //Change the button colors on hovering over the tracker boxes
 $('.tracker-content').hover(function(){
     $(this).find('.trackerButton').css('background-color',"#4d947c");

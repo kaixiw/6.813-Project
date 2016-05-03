@@ -38,7 +38,8 @@ var toggleSend = function(e) {
     $('#send-report').addClass("send-inactive");
     $('.send-active').removeClass("send-active");
     $('.sendable').unbind("click", addItem);
-    $('.send-on').removeClass("send-on")
+    $('.send-on').removeClass("send-on");
+    $('.report-errors').addClass("hide");
     console.log(d);
   } else {
     $('#send-report').addClass("send-active")
@@ -56,10 +57,26 @@ var toggleSend = function(e) {
 $('#report-cancel').click(toggleSend);
 
 $('#report-submit').click(function(e){
-  if($('#sendTextArea').val().length<1 || $(".send-on").length<1) return;
-  $("#send-overlay-success").addClass("send-success");
-  toggleSend(e);
-  setTimeout( function(){$("#send-overlay-success").removeClass("send-success");}, 1500 );
+  var error=false;
+  if($('#sendTextArea').val().length<1) {
+    $("#error-email").removeClass("hide");
+    error=true;
+  } else {
+    $("#error-email").addClass("hide");
+  }
+
+  if ($(".send-on").length<1) {
+    $("#error-select").removeClass("hide");
+    error=true;
+  } else {
+    $("#error-select").addClass("hide");
+  }
+
+  if(!error) {
+    $("#send-overlay-success").addClass("send-success");
+    toggleSend(e);
+    setTimeout( function(){$("#send-overlay-success").removeClass("send-success");}, 1500 );   
+  }
   return false;
 });
 /*
@@ -76,3 +93,26 @@ $('#send-report.send-inactive').click(function(e){
 }); 
 
 //$('#send-report').click();
+
+$("#reminders .report-opt").click(function(){
+  console.log("yay")
+});
+
+$("#todos .report-opt").click(function(){
+  console.log("yay")
+});
+
+$("#calories + .report-opt").click(function(){
+  console.log("yay");
+  activatePopup($("#calories")[0]);
+});
+
+$("#thoughts + .report-opt").click(function(){
+  activatePopup($("#thoughts")[0]);
+});
+
+$("#weight + .report-opt").click(function(){
+  activatePopup($("#weight")[0]);
+});
+
+//$('#calories').click()

@@ -20,7 +20,6 @@ h1 {
   color:#ff695c; /*red color*/
   font-weight: 700;
   font-family: 'Josefin Sans', sans-serif;
-
 }
 
 h2 {
@@ -134,6 +133,7 @@ h3{
 
 .section {
   padding: 3px;
+  position:relative;
 }
 
 .box {
@@ -292,7 +292,7 @@ h2{
 .tracker-box {
   width: 32%;
   box-sizing: border-box;
-
+  position:relative;
 }
 
 .tracker-content {
@@ -475,10 +475,11 @@ h2{
 #send-overlay-success{
   border-color:#4d947c;
   transition: 2s opacity;
+  color:white;
 }
 #send-overlay-success div{
   background:#4d947c;
-  color: black;
+  color: white;
 }
 #send-overlay.send-active,#send-overlay-success.send-success {
   opacity: 1;
@@ -525,14 +526,15 @@ h2{
 }
 
 .sendable.send-active {
-  border: 4px dashed #666;
+  border: 4px dashed #ff695c;
   opacity: .9;
   cursor: pointer;
   transition: .2s opacity;
+  position: relative;
 }
 
 .sendable.send-active:hover{
-  border: 4px dashed #444;
+  border: 4px dashed red;
 }
 .sendable.send-active:hover,.sendable.send-active:hover > *{
   opacity: 1;
@@ -540,7 +542,27 @@ h2{
 
 .sendable.send-active.send-on {
   opacity: 1;
-  border: 4px dashed #ff695c;
+  border: 4px dashed #4d947c;
+}
+
+.sendable.send-active:after{
+  content:'✓';
+  position: absolute;
+  font-size: 35px;
+  top: 5px;
+  right: 5px;
+  border-radius: 25px;
+  background: #4d947c;
+  width: 50px;
+  text-align: center;
+  height: 50px;
+  color: white;
+  opacity:0;
+  transition: .25s opacity;
+}
+
+.sendable.send-active.send-on:after{
+  opacity:1;
 }
 
 .sendable.send-active>*{
@@ -555,4 +577,77 @@ h2{
 .ui-autocomplete.ui-front {
   z-index:1001;
   font-size: 12px;
+}
+
+#reminders .send-active {
+  margin-bottom:400px;
+}
+
+.report-errors{
+  color:white;
+  background-color:#c31313;
+  margin-bottom: 2px;
+}
+.report-errors.hide{
+  display: none;
+}
+.report-opt {
+  position: absolute;
+  font-size: 17px;
+  top: 65px;
+  right: 23px;
+  border-radius: 25px;
+  background: rgba(0,0,0,.6);
+  width: 25px;
+  text-align: center;
+  height: 25px;
+  color: white;
+  opacity: 0;
+  transition: .25s opacity;
+  cursor:pointer;
+}
+
+#reminders .report-opt, #todos .report-opt{
+  top:70px;
+}
+
+.report-opt:hover{
+  background: rgba(0,0,0,.8);
+}
+.send-on + div{
+  opacity:1;
+}
+
+.send-mode #weightSubmitArea,
+.send-mode #CalorieSubmitArea,
+.send-mode #journalSubmitArea{
+  display:none;
+}
+
+.send-mode #prevJournalEntries{
+  top:5px;
+}
+.send-options{
+  display:none;
+}
+.send-mode .send-options{
+  display:block;
+}
+.send-options:before{
+  content: "Report options";
+  color:white;
+  display: block;
+  font-size:25px;
+  width:100%;
+  background: rgba(255,255,255,.1);
+  padding:2px;
+  text-align: left
+}
+.send-options{
+  width:100%;
+  color:white;
+  padding:5px;
+  text-align: center;
+  background:#ff695c;
+  margin:10px 0;
 }
