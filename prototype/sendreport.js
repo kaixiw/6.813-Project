@@ -150,6 +150,11 @@ $('#reminder-select').multiSelect({
   selectableHeader:"Unselected",
   selectionHeader:"Selected"
 });
+$('#todo-select').multiSelect({ 
+  keepOrder: true,
+  selectableHeader:"Unselected",
+  selectionHeader:"Selected"
+});
 
 
 
@@ -176,3 +181,10 @@ var refreshTodos = function(){
   $('#todo-select').multiSelect('select_all');  
   $('#todo-select').multiSelect('refresh');  
 }
+
+$('.send-options input').keypress(function(e){
+  if (e.which == 13) {
+    $(this).parent().parent().siblings('.submit').find('button').click();
+    return false;    //<---- Add this line
+  }
+})
