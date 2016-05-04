@@ -605,6 +605,7 @@ h2{
   opacity: 0;
   transition: .25s opacity;
   cursor:pointer;
+  display:none;
 }
 
 #reminders .report-opt, #todos .report-opt{
@@ -615,6 +616,7 @@ h2{
   background: rgba(0,0,0,.8);
 }
 .send-on + div{
+  display:block;
   opacity:1;
 }
 
@@ -641,7 +643,8 @@ h2{
   width:100%;
   background: rgba(255,255,255,.1);
   padding:2px;
-  text-align: left
+  text-align: left;
+  margin-bottom: 10px;
 }
 .send-options{
   width:100%;
@@ -650,4 +653,97 @@ h2{
   text-align: center;
   background:#ff695c;
   margin:10px 0;
+}
+.send-options > * {
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top:5px;
+  position:relative;
+}
+.send-options .label{
+  width:30%;
+  text-align:center;
+  display:inline-block; 
+  float:left;
+  line-height: 45px;
+  height: 45px;
+}
+.send-options .label.txt{
+  line-height: 70px;
+  height: 70px;
+}
+.send-options .inp{
+  width:69%;
+  text-align: left;
+  position:relative;
+  display:inline-block;
+}
+
+.send-options input,
+.send-options textarea{
+  font-family: 'Quicksand', sans-serif;
+  /* font-family: 'Lora', serif; */
+  font-weight: 400;
+  font-size: 18px;
+  resize: none;
+  padding: 2.5%;
+  /* background-color: rgba(255,255,255,.25) !important; */
+  border-style: none;
+  border-left-style: solid;
+  border-right-style: none !important;
+  border-color: #8c315d;
+  border-width: 3px;
+  transition: .2s all;
+  background-color: white;
+}
+.send-options input{
+  width:100%;
+  max-width:200px;
+  height:45px;
+  box-sizing: border-box;
+  position:relative;
+}
+.send-options .inp.report-date input{
+  max-width:150px;
+}
+.send-options textarea{
+  width:100%;
+  height:70px;
+  box-sizing: border-box;
+}
+.send-options .row{
+  width:100%;
+  display:block;
+}
+.send-options .row.submit{
+  text-align: center;
+}
+
+.send-options button{
+  border-radius:20px;
+  font-family:'Josefin Sans', sans-serif;
+  font-weight:600;
+  font-size:18px;
+  padding:5px 10px;
+  margin:10px;
+  margin-bottom:20px;
+  color:white;
+  cursor: pointer;
+  transition: .2s all;
+}
+.send-options button:hover{
+  cursor:pointer;
+  background-color:#dd483b;
+  border-color:#c31313;
+}
+.ms-container{
+  margin: 0 auto;
+  background: transparent;
+}
+.button{
+  cursor:pointer;
+  display:inline-block;
+}
+.button:hover{
+  text-decoration: unset;
 }

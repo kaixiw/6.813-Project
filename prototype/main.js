@@ -1,4 +1,4 @@
-$(document).ready(function(){
+//$(document).ready(function(){
     var susan = new User();
     CURRENT_USER = susan;
     susan.loadData();
@@ -28,4 +28,4 @@ $(document).ready(function(){
 
     console.log("document loading complete");
 
-});
+//});

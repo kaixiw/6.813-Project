@@ -34,20 +34,23 @@ var addItem = function(){
 
 var toggleSend = function(e) {
   d = $('#send-report');
-  if(d.hasClass("send-active")) {
+  if(d.hasClass("send-active")) { // Disable send report mode
     $('#send-report').addClass("send-inactive");
     $('.send-active').removeClass("send-active");
     $('.sendable').unbind("click", addItem);
     $('.send-on').removeClass("send-on");
     $('.report-errors').addClass("hide");
+    $('body').removeClass('send-mode');
     console.log(d);
-  } else {
+  } else { // enable send report mode
     $('#send-report').addClass("send-active")
     $('#send-report').removeClass("send-inactive");
     $('#send-overlay').addClass("send-active");
     $('.sendable').addClass("send-active");
-
+    $('body').addClass('send-mode');
     $('.sendable').bind("click", addItem);
+    refreshReminders();
+    refreshTodos();
   }
   console.log(d);
   e.preventDefault();
@@ -95,11 +98,11 @@ $('#send-report.send-inactive').click(function(e){
 //$('#send-report').click();
 
 $("#reminders .report-opt").click(function(){
-  console.log("yay")
+  activatePopup({id:"reminders"});
 });
 
 $("#todos .report-opt").click(function(){
-  console.log("yay")
+  activatePopup({id:"todos"});
 });
 
 $("#calories + .report-opt").click(function(){
@@ -115,4 +118,61 @@ $("#weight + .report-opt").click(function(){
   activatePopup($("#weight")[0]);
 });
 
-//$('#calories').click()
+/*
+$('.datepicker').datepicker({
+  minDate:new Date(2016,3,28), 
+  maxDate:new Date(),
+  beforeShow:function(){
+    console.log('derp');
+   $('#ui-datepicker-div').css('top',$(this).offset().top); 
+  }
+  });
+$('.datepicker.start').datepicker('setDate', new Date(2016,3,28));
+$('.datepicker.end').datepicker('setDate', new Date());
+$('.datepicker').click(function(){
+  
+  $('#ui-datepicker-div').css('top',$(this).offset().top);
+});*/
+var minDate = new Date(2016,3,28);
+var maxDate = new Date();
+
+formatDate = function(d){
+  return (d.getMonth()+1)+"/"+d.getDate()+"/"+d.getFullYear();
+}
+$('.datepicker.start').val(formatDate(minDate));
+$('.datepicker.end').val(formatDate(maxDate));
+
+$('.send-options .submit button').click(function(){
+  $('.active').toggleClass('active');
+})
+$('#reminder-select').multiSelect({ 
+  keepOrder: true,
+  selectableHeader:"Unselected",
+  selectionHeader:"Selected"
+});
+
+
+
+var refreshReminders = function(){
+  $('#reminder-select').empty();
+  var elements = "";
+  susan.reminders.forEach(function(e,n){
+    elements+="<option value='reminder_"+n+"'>"+e+"</option>";
+  });
+  console.log(elements);
+  $('#reminder-select').html(elements);
+  $('#reminder-select').multiSelect('select_all');  
+  $('#reminder-select').multiSelect('refresh');  
+}
+var refreshTodos = function(){
+  $('#todo-select').empty();
+  var elements = "";
+  susan.todos.forEach(function(e,n){
+    var complete = e.complete==true?" [Done]":"";
+    elements+="<option value='todo_"+n+"'>"+e.text+complete+"</option>";
+  });
+  console.log(elements);
+  $('#todo-select').html(elements);
+  $('#todo-select').multiSelect('select_all');  
+  $('#todo-select').multiSelect('refresh');  
+}

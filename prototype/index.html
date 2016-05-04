@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>babyBuddy</title>
+<link rel="stylesheet" href="css/multi-select.css" />
 <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="reminders.css" />
 <link rel="stylesheet" href="journal.css" />
@@ -13,16 +14,9 @@
 <link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700|Questrial' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Lora:400,700italic,400italic,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.1/Chart.min.js"></script>
-<script src = "external_js/moment.js"></script>
-<script src = "main.js"></script>
-<script src = "ClassUser.js"></script>
-<script src = "journal.js"></script>
 
 </head>
-<body class="send-modeno">
+<body>
 <div id="wrapper">
     <div id="header">
         <h1>baby buddy</h1>
@@ -132,8 +126,25 @@
         <div class="popup-x">×</div>
         <div class="popup-header"><h2>Your thoughts</h2></div>
         <div class="popup-content">
+            <div class="send-options">
+                <div class="row">
+                    <div class="label">Start Date</div>
+                    <div class="inp report-date">
+                        <input type="text" class="datepicker start">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label">End Date</div>
+                    <div class="inp report-date">
+                        <input type="text" class="datepicker end">
+                    </div>
+                </div>
+                <div class="row submit">
+                    <button class="red">Save</button>
+                </div>
+            </div>
             <div id="journalSubmitArea">
-            <div class="date">April 7th, 2016<br> 2:43pm</div>
+            <div id="current_date" class="date">April 7th, 2016<br> 2:43pm</div>
             <textarea id="journalTextarea" cols="16" rows="4"  placeholder="What is on your mind today?"></textarea>
             <input class="red" id="submitJournal" type="submit" value="submit"/>
             </div>
@@ -187,6 +198,23 @@
         <div class="popup-x">×</div>
         <div class="popup-header"><h2>Your weight</h2></div>
         <div class="popup-content" id="weightPopup">
+            <div class="send-options">
+                <div class="row">
+                    <div class="label">Start Date</div>
+                    <div class="inp report-date">
+                        <input type="text" class="datepicker start">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label">End Date</div>
+                    <div class="inp report-date">
+                        <input type="text" class="datepicker end">
+                    </div>
+                </div>
+                <div class="row submit">
+                    <button class="red">Save</button>
+                </div>
+            </div>
             <div id="weightSubmitArea">
                 <div class="submitInstructions"> Enter your weight for today </div>
                 <input type="text" maxlength='5' id="weightTextarea" row='1' cols="4" class="lightGreen" placeholder="___ lbs"></input>
@@ -212,8 +240,21 @@
         <div class="popup-header"><h2>Your Calories</h2></div>
         <div class="popup-content" id="CaloriePopup">
             <div class="send-options">
-            Select Dates: 
-            Comments:
+                <div class="row">
+                    <div class="label">Start Date</div>
+                    <div class="inp report-date">
+                        <input type="text" class="datepicker start">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label">End Date</div>
+                    <div class="inp report-date">
+                        <input type="text" class="datepicker end">
+                    </div>
+                </div>
+                <div class="row submit">
+                    <button class="red">Save</button>
+                </div>
             </div>
             <div id="CalorieSubmitArea">
                 <div class="submitInstructions"> Enter your calories for today </div>
@@ -232,6 +273,56 @@
     </div>
 </div>
 
+<div id="reminders-popup" class="popup-wrapper">
+    <div class="popup white">
+        <div class="popup-x">×</div>
+        <div class="popup-header"><h2>Reminders</h2></div>
+        <div class="popup-content" id="CaloriePopup">
+            <div class="send-options">
+                <div class="row">
+                    Select reminders to send
+                </div>
+                <div class="row">
+                    <select multiple="multiple" id="reminder-select" name="reminder-select[]">
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="button" onclick="$('#reminder-select').multiSelect('deselect_all')">Deselect All</div> /
+                    <div class="button" onclick="$('#reminder-select').multiSelect('select_all')">Select All</div>
+                </div>
+                <div class="row submit">
+                    <button class="red">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="todos-popup" class="popup-wrapper">
+    <div class="popup white">
+        <div class="popup-x">×</div>
+        <div class="popup-header"><h2>Reminders</h2></div>
+        <div class="popup-content" id="CaloriePopup">
+            <div class="send-options">
+                <div class="row">
+                    Select reminders to send
+                </div>
+                <div class="row">
+                    <select multiple="multiple" id="todo-select" name="todo-select[]">
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="button" onclick="$('#todo-select').multiSelect('deselect_all')">Deselect All</div> /
+                    <div class="button" onclick="$('#todo-select').multiSelect('select_all')">Select All</div>
+                </div>
+                <div class="row submit">
+                    <button class="red">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--Send Report-->
 <div id="send-overlay">
     <div>Select items to include in report (marked with dotted borders)</div>
@@ -242,9 +333,44 @@
 </div>
 
 
-
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.1/Chart.min.js"></script>
+<script src = "external_js/jquery.multi-select.js"></script>
+<script src = "external_js/moment.js"></script>
+<script src = "ClassUser.js"></script>
+<script src = "journal.js"></script>
+<script src = "main.js"></script>
 <script type="text/javascript" src="tracker.js"></script>
 <script type="text/javascript" src="sendreport.js"></script>
+<script>
+    var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];
+    var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    // Journal date formatter
+    var j_format = function(d){ 
+        var n=d.getDate().toString();
+        var last_digit=n.substring(n.length-1,2)
+        var sub="th";
+        if(last_digit==1)sub="st";
+        else if(last_digit==2)sub="nd";
+        else if(last_digit==3)sub="rd";
+
+        var h=d.getHours();
+        var ampm = " am";
+        if(h>12){
+            ampm=" pm";
+            h-=12;
+        }
+        return days[d.getDay()]+", "+months[d.getMonth()]+" "+n+sub
+            +"<br>"+h+":"+d.getMinutes()+ampm;
+    }
+    $('#current_date').html(j_format(new Date()));
+</script>
 </body>
 
 </html>
+<!--
+                <div class="row">
+                    <div class="label txt">Comments</div><div class="txt inp"><textarea placeholder=""></textarea></div>
+                </div>
+                -->
