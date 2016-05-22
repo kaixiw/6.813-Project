@@ -1,0 +1,114 @@
+#weightSubmitArea{
+	width:220px;
+	margin:auto;
+	text-align:center;
+}
+
+#invalidWeightSubmit{
+	padding-top:10px;
+	padding-bottom:10px;
+	display:none;
+	text-align:center;
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:400;
+	font-size:24px;
+	color:#ff695c;
+}
+
+#afterWeightSubmit{
+	display:none;
+	width:220px;
+
+	margin:auto;
+	text-align:center;
+}
+
+.submitInstructions{
+	margin-bottom:10px;
+	font-weight:400;
+}
+.weightdisplay{
+	padding-top: 10px;
+	float:left;
+	width:120px;
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:600;
+	font-size:36px;
+	color:#ff695c;
+}
+#weightTextarea {
+	margin:auto;
+	font-size:24px;
+	width:80px;
+	height:30px;
+	padding:10px;
+	text-align:right;
+	resize:none;
+	border-radius:3px;
+	border-style:none;
+	border-bottom-style:solid;
+	background-color: rgba(255,255,255,.75) !important;
+	transition: .2s all;
+	border-color:#b9dfc4;
+
+}
+
+
+#weightTextarea:focus{
+	border-color:#8DC9B5;
+}
+
+#editWeight, #submitWeight {
+	float:right;
+	border-radius:20px;
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:600;
+	font-size:18px;
+	padding:5px;
+	width:80px;
+	margin:10px;
+	margin-bottom:20px;
+	color:white;
+	border-style:none;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	transition: .2s all;
+
+
+}
+
+#editWeight:hover, #submitWeight:hover{
+	cursor:pointer;
+	background-color:#dd483b;
+	border-color:#c31313;
+}
+
+.checkBox{
+	float: left;
+}
+
+
+.compare{/*
+	font-family:'Lora', serif;
+
+	font-weight:400;*/
+
+}
+
+.previous{
+	color:#db1200;
+}
+
+.similar{
+	color:#8c315d;
+}
+
+#weight-popup .popupcontent{
+/*	text-align:center;*/
+}
+
+h3{
+	color:black;
+	font-size:20px;
+
+}

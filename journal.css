@@ -1,0 +1,220 @@
+textarea, .entry, .editable {
+	width: 95%;
+	font-family:'Quicksand', sans-serif;
+/*	font-family:'Lora', serif;*/
+	font-weight:400;
+	font-size:18px;
+/*	border-bottom-style:none;
+	border-right-style:none;*/
+	resize:none;
+	padding:2.5%;
+/*	background-color: rgba(255,255,255,.25) !important;*/
+	border-style:none;
+	border-left-style:solid;
+	border-right-style:none !important;
+	
+	border-color: #8c315d;
+	border-width:3px;
+	transition: .2s all;
+	background-color:white;
+
+}
+
+.editable{
+	color:black;
+
+	padding:1%;
+}
+
+
+.editTextarea{
+	display:none;
+}
+
+
+
+textarea {
+	height: 150px;
+}
+/*.popup-content{
+	overflow-x:hidden;
+	overflow-y:auto;
+}*/
+
+
+
+.entry{
+	width:auto;
+/*	border-style:none;*/
+/*	border-top-left-radius:3px;*/
+	border-top-right-radius:3px;
+	border-color:#C63F7E;
+}
+
+.entry:hover{
+	background-color:#C63F7E !important;
+	border-color:#FF87A7;
+}
+
+#prevJournalEntries{
+	width:100%;
+	position:relative;
+	top:-5px;
+	max-height:400px;
+	overflow-x:hidden;
+	overflow-y:auto;
+
+}
+
+
+.entry{
+	color:white;
+	height:20px;
+	overflow:hidden;
+	position:relative;
+}
+
+.entry:hover{
+	cursor:pointer;
+}
+
+.entry.a{
+	background-color:#C63F7E;
+}
+.entry.c{
+	background-color:#8c315d;
+}
+.entry.b{
+	background-color:#571334;
+}
+
+textarea:focus{
+	border-color: #C63F7E;
+}
+
+.date {
+	float:right;
+/*	font-family:'Lora', serif;*/
+/*	font-weight:400;
+	font-size:18px;*/
+	text-align:right;
+	margin:10px;
+
+}
+
+.popup h2{
+	font-size:24px;
+	color:#8c315d;
+	font-weight:700;
+}
+
+h3 {
+	color:#8c315d;
+	font-weight:600;
+}
+#thoughts-popup .popup-content{
+	position:relative;
+/*	top:-30px;*/
+
+}
+
+#thoughts-popup img {
+	width:100%;
+}
+
+#submitJournal {
+	float:right;
+	border-radius:20px;
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:600;
+	font-size:18px;
+	padding:5px;
+	width:80px;
+	margin:10px;
+	margin-right:0px;
+	color:white;
+	position:relative;
+/*	bottom:60px;*/
+	border-style:none;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	visibility:hidden;
+	transition: .2s all;
+	z-index:3;
+	bottom:4px;
+
+}
+
+#submitJournal:hover{
+	cursor:pointer;
+	background-color:#dd483b;
+	border-color:#c31313;
+}
+
+#CalorieTextarea {
+	margin:auto;
+	font-size:24px;
+	width:80px;
+	height:30px;
+	padding:10px;
+	text-align:right;
+	resize:none;
+	border-radius:3px;
+	border-style:none;
+	border-bottom-style:solid;
+	background-color: rgba(255,255,255,.75) !important;
+	transition: .2s all;
+	border-color:#b9dfc4;
+}
+
+.previewText{
+	float:left;
+}
+.previewDate {
+	float:right;
+	display:none;
+}
+
+.entryFull{
+	display:none;
+/*	height:200px;*/
+}
+
+.fullDate{
+	width:100%;/*
+	float:right;*/
+	display:block;
+	text-align:right;
+	font-size:14px;
+	margin-bottom: 5px;
+}
+
+.entryActions{
+	width:100%;
+	text-align:right;
+	font-size:14px;
+}
+
+.entryText{
+	/*float:left;*/
+}
+
+.vis{
+	display:block;
+}
+
+.hid{
+	display:none;
+}
+
+.expanded{
+/*	height:200px !important;*/
+}
+
+.collapsed{
+/*	height:20px;*/
+}
+
+.edit, .delete{
+	padding:10px;
+}

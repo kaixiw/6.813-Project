@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>babyBuddy</title>
+<link rel="stylesheet" href="css/multi-select.css" />
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="reminders.css" />
+<link rel="stylesheet" href="journal.css" />
+<link rel="stylesheet" href="weight.css" />
+<link rel="stylesheet" href="Calorie.css" />
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300|Merriweather:400,700,300|Oxygen:400,700,300|Josefin+Sans:400,600,700,300|Source+Serif+Pro:400,600|Hammersmith+One' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700|Questrial' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700italic,400italic,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <h1>baby buddy</h1>
+    </div>
+    <div id="content" class="row">
+        <!-- Left Column -->
+        <div id="welcome" class="section">Welcome back, Susan!</div>
+        <div id="left-col" class="col">
+            
+            <div id="info" class="section">
+                <div class="box lightGreen sendable">
+                    <div class ="left">
+                        <h2>23 weeks</h2>
+                        <img class ="fruit" src="img/grapefruit.png"> 
+                       
+                    </div>
+                    <div class="mid">
+                        <h3>Your baby also:</h3>
+                            <ul>
+                                <li>is forming nipples</li>
+                                <li>has a fully formed face</li>
+                                <li>can listen to your voice and heartbeat</li>
+                            </ul>
+
+                    </div>
+                    <div class="right">
+                        <h3>Common symptoms:</h2>
+                            <ul>
+                                <li>Swollen ankles and feet</li>
+                                <li>Braxton Hicks contractions</li>
+                                <li>Aching back</li>
+                                <li>Bleeding and/or swollen gums</li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="trackers" class="section">
+                <div class="box mediumGreen">
+                    <h2>Log your:</h2>
+                    <div id="tracker-wrapper" class="noselect">
+                        <div class="tracker-box col">
+                            <div id="thoughts" class="tracker-content sendable">
+                                <img src="img/smiley2.png"> <!--From http://www.clipartpanda.com/categories/smiley-face-clip-art-black-and-white -->
+                                <button class="trackerButton green">thoughts</button>
+                            </div>
+                            <div class="report-opt">🔧</div>
+                        </div>
+                        <div class="tracker-box col">
+                            <div id="weight" class="tracker-content sendable">
+                                <img src="img/scale.png">
+                                <button class="trackerButton green">weight</button>
+                            </div>
+                            <div class="report-opt">🔧</div>
+                        </div>
+                        <div class="tracker-box col">
+                            <div id="calories" class="tracker-content sendable">
+                                <img src="img/apple.png">
+                                <button class="trackerButton green">calories</button>
+                            </div>
+                            <div class="report-opt">🔧</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right Column -->
+        <div id="right-col" class="col">
+            <div id="send-report" class="section send-inactive">
+                <div class="box red">
+                    <h2>Email Your Progress</h2>
+                    <div id="report-options">
+                    <div id="report-cancel">cancel</div>
+                    <input type="text" id="sendTextArea" row='1' class="red" placeholder="Email"></input>
+                    <div id="error-email" class="report-errors hide">Email cannot be blank</div>
+                    <div id="error-select" class="report-errors hide">You must select one or more items</div>
+                    <button id="report-submit" class="red">Send</button></div>
+                </div>    
+            </div>
+            <div id="todos" class="section">
+                <div class="box purple sendable">
+                    <h2>Todos</h2>
+                    <ul id = "todosList">
+                        <li><input id = "todosInput" type = "text" placeholder = "Add a new todo here" class = ></li> 
+                    </ul>
+                </div>
+                <div class="report-opt">🔧</div>
+            </div>
+            <div id="reminders" class="section">
+                <div class="box purple sendable">
+                    <h2>Reminders</h2>
+                    <ul id = "remindersList">
+                        <li><input id = "remindersInput" type = "text" placeholder = "Add a new reminder here" class = ></li> 
+                    </ul>
+                </div>
+                <div class="report-opt">🔧</div>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+
+<!-- Hidden Divs -->
+<div id="darken"></div>
+<div id="thoughts-popup" class="popup-wrapper">
+    <div class="popup white">
+        <div class="popup-x">×</div>
+        <div class="popup-header"><h2>Your thoughts</h2></div>
+        <div class="popup-content">
+            <div class="send-options">
+                <div class="row">
+                    <div class="label">Start Date</div>
+                    <div class="inp report-date">
+                        <input type="text" class="datepicker start">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label">End Date</div>
+                    <div class="inp report-date">
+                        <input type="text" class="datepicker end">
+                    </div>
+                </div>
+                <div class="row submit">
+                    <button class="red">Save</button>
+                </div>
+            </div>
+            <div id="journalSubmitArea">
+            <div id="current_date" class="date">April 7th, 2016<br> 2:43pm</div>
+            <textarea id="journalTextarea" cols="16" rows="4"  placeholder="What is on your mind today?"></textarea>
+            <input class="red" id="submitJournal" type="submit" value="submit"/>
+            </div>
+            <div id="prevJournalEntries">
+                <div class="entry c"> 
+                    <div class="preview vis"><div class="previewText">I'm somewhat tired...</div> <div class="previewDate">April 25th</div></div>
+                    <div class="entryFull hid">
+                        <div class="fullDate">Monday, Apr 25th 16<br>10:26 pm</div>
+                        <div class="entryText" contenteditable="false">
+                        I'm somewhat tired but looking for an optimistic future! I ate a whole gallon of ice cream today. What a day.<br> soidfousd
+                        </div>
+                        <textarea class="editTextarea"></textarea>
+                        <div class="entryActions">
+                            <span class = "edit">edit</span>
+                            <span class = "delete">delete</span>
+                        </div>
+                    </div>
+                </div> 
+                <div class="entry c">
+                    <div class="preview vis"><div class="previewText">Swiggety swag...</div><div class="previewDate">April 12th</div></div>
+                    <div class="entryFull hid">
+                        <div class="fullDate">Saturday, Apr 23th 16<br>6:16 pm</div>
+                        <div class="entryText">
+                        Swiggety swag lmao ayyyyyy hahahahahh<br> soidfousd
+                        </div>
+                        <textarea class="editTextarea"></textarea>
+                        <div class="entryActions">
+                            <span class = "edit">edit</span>
+                            <span class = "delete">delete</span>
+                        </div>
+
+                    </div>
+                    
+                </div> 
+<!--                 <div class="entry b"> Entry B
+                </div> 
+                <div class="entry a"> Entry A
+                </div> 
+                <div class="entry c"> Entry F
+                </div> 
+                <div class="entry b"> Entry H
+                </div> 
+                <div class="entry a"> Entry U
+                </div>  -->
+            </div>
+        </div>
+    </div>
+</div>
+<div id="weight-popup" class="popup-wrapper">
+    <div class="popup white">
+        <div class="popup-x">×</div>
+        <div class="popup-header"><h2>Your weight</h2></div>
+        <div class="popup-content" id="weightPopup">
+            <div class="send-options">
+                <div class="row">
+                    <div class="label">Start Date</div>
+                    <div class="inp report-date">
+                        <input type="text" class="datepicker start">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label">End Date</div>
+                    <div class="inp report-date">
+                        <input type="text" class="datepicker end">
+                    </div>
+                </div>
+                <div class="row submit">
+                    <button class="red">Save</button>
+                </div>
+            </div>
+            <div id="weightSubmitArea">
+                <div class="submitInstructions"> Enter your weight for today </div>
+                <input type="text" maxlength='5' id="weightTextarea" row='1' cols="4" class="lightGreen" placeholder="___ lbs"></input>
+                <input class="red" id="submitWeight" type="submit" value="submit"/>
+                <div id="invalidWeightSubmit">Please enter a number!</div>
+            </div>
+            <div id="afterWeightSubmit">
+                <div class="submitInstructions">Today you're weighing in at</div>
+                <div class="weightdisplay">146 lbs</div>
+                <input class="red" id="editWeight" type="submit" value="edit"/>
+            </div>
+            <div id="invalidWeightSubmit">Please enter a number!</div>
+            <canvas id="weightChart"></canvas>
+            <h3>Compare to... </h3>
+            <input type="checkbox" value="similar" class="checkBox" id="similarCheckBox"><p class="compare similar">Similar users</p>
+            <input type="checkbox" value="previous" class="checkBox" id="previousCheckBox"><p class="compare previous">My previous pregnancy</p>
+        </div>
+    </div>
+</div>
+<div id="calories-popup" class="popup-wrapper">
+    <div class="popup white">
+        <div class="popup-x">×</div>
+        <div class="popup-header"><h2>Your Calories</h2></div>
+        <div class="popup-content" id="CaloriePopup">
+            <div class="send-options">
+                <div class="row">
+                    <div class="label">Start Date</div>
+                    <div class="inp report-date">
+                        <input type="text" class="datepicker start">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="label">End Date</div>
+                    <div class="inp report-date">
+                        <input type="text" class="datepicker end">
+                    </div>
+                </div>
+                <div class="row submit">
+                    <button class="red">Save</button>
+                </div>
+            </div>
+            <div id="CalorieSubmitArea">
+                <div class="submitInstructions"> Enter your calories for today </div>
+                <input type="text" maxlength='5' id="CalorieTextarea" row='1' cols="4" class="lightGreen" placeholder="___ cal."></input>
+                <input class="red" id="submitCalorie" type="submit" value="submit"/>
+                <div id="invalidCalorieSubmit">Please enter a number!</div>
+            </div>
+            <div id="afterCalorieSubmit">
+                <div class="submitInstructions">Today you have eaten</div>
+                <div class="Caloriedisplay">2000 calories</div>
+                <input class="red" id="editCalorie" type="submit" value="edit"/>
+            </div>
+            <canvas id="CalorieChart"></canvas>
+            <h3>Recommended Calorie Target - 2000</h3>
+        </div>
+    </div>
+</div>
+
+<div id="reminders-popup" class="popup-wrapper">
+    <div class="popup white">
+        <div class="popup-x">×</div>
+        <div class="popup-header"><h2>Reminders</h2></div>
+        <div class="popup-content" id="CaloriePopup">
+            <div class="send-options">
+                <div class="row">
+                    Select reminders to send
+                </div>
+                <div class="row">
+                    <select multiple="multiple" id="reminder-select" name="reminder-select[]">
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="button" onclick="$('#reminder-select').multiSelect('deselect_all')">Deselect All</div> /
+                    <div class="button" onclick="$('#reminder-select').multiSelect('select_all')">Select All</div>
+                </div>
+                <div class="row submit">
+                    <button class="red">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="todos-popup" class="popup-wrapper">
+    <div class="popup white">
+        <div class="popup-x">×</div>
+        <div class="popup-header"><h2>Reminders</h2></div>
+        <div class="popup-content" id="CaloriePopup">
+            <div class="send-options">
+                <div class="row">
+                    Select reminders to send
+                </div>
+                <div class="row">
+                    <select multiple="multiple" id="todo-select" name="todo-select[]">
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="button" onclick="$('#todo-select').multiSelect('deselect_all')">Deselect All</div> /
+                    <div class="button" onclick="$('#todo-select').multiSelect('select_all')">Select All</div>
+                </div>
+                <div class="row submit">
+                    <button class="red">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Send Report-->
+<div id="send-overlay">
+    <div>Select items to include in report (marked with dotted borders)</div>
+</div>
+
+<div id="send-overlay-success">
+    <div>Report Sent!</div>
+</div>
+
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.1/Chart.min.js"></script>
+<script src = "external_js/jquery.multi-select.js"></script>
+<script src = "external_js/moment.js"></script>
+<script src = "ClassUser.js"></script>
+<script src = "journal.js"></script>
+<script src = "main.js"></script>
+<script type="text/javascript" src="tracker.js"></script>
+<script type="text/javascript" src="sendreport.js"></script>
+<script>
+    var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];
+    var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    // Journal date formatter
+    var j_format = function(d){ 
+        var n=d.getDate().toString();
+        var last_digit=n.substring(n.length-1,2)
+        var sub="th";
+        if(last_digit==1)sub="st";
+        else if(last_digit==2)sub="nd";
+        else if(last_digit==3)sub="rd";
+
+        var h=d.getHours();
+        var ampm = " am";
+        if(h>12){
+            ampm=" pm";
+            h-=12;
+        }
+        return days[d.getDay()]+", "+months[d.getMonth()]+" "+n+sub
+            +"<br>"+h+":"+d.getMinutes()+ampm;
+    }
+    $('#current_date').html(j_format(new Date()));
+</script>
+</body>
+
+</html>
+<!--
+                <div class="row">
+                    <div class="label txt">Comments</div><div class="txt inp"><textarea placeholder=""></textarea></div>
+                </div>
+                -->

@@ -1,0 +1,80 @@
+#CalorieSubmitArea{
+	width:220px;
+	margin:auto;
+	text-align:center;
+}
+
+#invalidCalorieSubmit{
+	padding-top:10px;
+	padding-bottom:10px;
+	display:none;
+	text-align:center;
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:400;
+	font-size:24px;
+	color:#ff695c;
+}
+
+#afterCalorieSubmit{
+	display:none;
+	width:260px;
+
+	margin:auto;
+	text-align:center;
+}
+
+#CalorieTextarea {
+	margin:auto;
+	font-size:24px;
+	width:80px;
+	height:30px;
+	padding:10px;
+	text-align:right;
+	resize:none;
+	border-radius:3px;
+	border-style:none;
+	border-bottom-style:solid;
+	background-color: rgba(255,255,255,.75) !important;
+	transition: .2s all;
+	border-color:#b9dfc4;
+}
+
+.Caloriedisplay{
+	padding-top: 10px;
+	float:left;
+	width:160px;
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:600;
+	font-size:36px;
+	color:#ff695c;
+}
+
+
+#CalorieTextarea:focus{
+	border-color:#8DC9B5;
+}
+
+
+#editCalorie, #submitCalorie {
+	float:right;
+	border-radius:20px;
+	font-family:'Josefin Sans', sans-serif;
+	font-weight:600;
+	font-size:18px;
+	padding:5px;
+	width:80px;
+	margin:10px;
+	margin-bottom:20px;
+	color:white;
+	border-style:none;
+	border-right-style:solid;
+	border-bottom-style:solid;
+	transition: .2s all;
+
+}
+
+#editCalorie:hover, #submitCalorie:hover{
+	cursor:pointer;
+	background-color:#dd483b;
+	border-color:#c31313;
+}
